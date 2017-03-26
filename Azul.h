@@ -1,7 +1,7 @@
 #include <string>
 
-#ifndef Azul_H
-#define Azul_H
+#ifndef AZUL_H
+#define AZUL_H
 
 using namespace std;
 

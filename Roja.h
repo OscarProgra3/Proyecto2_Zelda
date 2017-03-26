@@ -1,7 +1,7 @@
 #include <string>
 
-#ifndef Roja_H
-#define Roja_H
+#ifndef ROJA_H
+#define ROJA_H
 
 using namespace std;
 

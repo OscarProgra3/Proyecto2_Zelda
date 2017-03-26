@@ -7,7 +7,7 @@ using namespace std;
 
 class Ropa {
 
-	private:
+	protected:
 		int defensaE;
 
 	public:

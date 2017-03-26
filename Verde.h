@@ -1,12 +1,17 @@
-#include "Verde.h"
 #include <string>
 
-Verde::Verde() {
-}
+#ifndef VERDE_H
+#define VERDE_H
 
-Verde::Verde(int pdefensaE) : Ropa(pdefensaE) {
-}
+using namespace std;
 
-string Verde::getTipoVerde() {
-	return "Verde";
-}
+class Verde : public Ropa {
+
+	public:
+		Verde();
+		Verde(int);
+		string getTipoVerde();
+
+};
+
+#endif
