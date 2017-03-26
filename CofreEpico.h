@@ -9,7 +9,7 @@ using namespace std;
 class CofreEpico : public Cofre
 {
 	private:
-
+		
 
 	public:
 		CofreEpico(int);
