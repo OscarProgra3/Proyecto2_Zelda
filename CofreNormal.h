@@ -8,10 +8,15 @@
 using namespace std;
 
 class CofreNormal : public Cofre
-{
-public:
-	CofreNormal();
-	CofreNormal(int);
+	{
+	public:
+		CofreNormal();
+		CofreNormal(int);
+
+		
+		string getTipoCrofre();
+		int probabilidadepica();
 
 		
 };
+#endif

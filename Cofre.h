@@ -8,13 +8,14 @@ using namespace std;
 
 class Cofre
 {
-	private:
+	protected:
 		int probabilidadepica;
 
 	public:
 		Cofre();
 		Cofre(int);
 
+		virtual string getTipoCrofre();
 		virtual int probabilidadepica()=0;
 		
 };

@@ -1,7 +1,7 @@
 #include "CofreEpico.h"
 
 
-CofreEpico::CofreEpico(int pprobabilidad) :  CofreEpico(pprobabilidad)
+CofreEpico::CofreEpico(int pprobabilidad) :  Cofre(pprobabilidad)
 {
 
 }
@@ -10,4 +10,10 @@ CofreEpico::CofreEpico(int pprobabilidad) :  CofreEpico(pprobabilidad)
 int CofreEpico::probabilidadepica()
 {
 	return 60;
+}
+
+
+string getTipoCrofre()
+{
+	return "Epico";
 }

@@ -9,7 +9,7 @@ using namespace std;
 class CofreEpico : public Cofre
 {
 	private:
-		
+
 
 	public:
 		CofreEpico(int);
@@ -17,6 +17,7 @@ class CofreEpico : public Cofre
 
 
 		int probabilidadepica();
+		string getTipoCrofre();
 		
 	
 };
