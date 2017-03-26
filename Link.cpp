@@ -14,7 +14,6 @@ Link::Link(string pnombre,int prupias,int pHP,int pataque,int pdefensa,vector<Ro
 }
 
 
-
 void setNombre(string tnombre)
 { 
 	this->nombre = tnombre; 
