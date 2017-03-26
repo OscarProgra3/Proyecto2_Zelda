@@ -8,10 +8,11 @@ using namespace std;
 class Mundo
 {
 	private:
-		vector<Armas*> 		
+		vector<Armas*> ListaArmas;
+		vector<Items*> ListaItems;		
 	public:
 		Mundo();
-		Mundo(vector<Armas*>);
+		Mundo(vector<Armas*>,vector<Items*>);
 		~Mundo();
 	
 };
