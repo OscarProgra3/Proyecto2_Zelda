@@ -10,12 +10,15 @@ class Monster {
 	protected:
 		double HP;
 		double ataque;
+		int dinero;
 
 	public:
 		Monster();
-		Monster(double, double);
+		Monster(double, double, int);
 		void setHP(double);
 		void setAtaque(double);
+		void setDinero(int);
+		int getDinero();
 		double getHP();
 		double getAtaque();
 

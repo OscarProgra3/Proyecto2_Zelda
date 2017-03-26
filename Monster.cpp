@@ -4,9 +4,10 @@
 Monster::Monster() {
 }
 
-Monster::Monster(double pHP, double pAtk) {
+Monster::Monster(double pHP, double pAtk, int pDinero) {
 	HP = pHP;
 	ataque = pAtk;
+	dinero = pDinero;
 }
 
 int Monster::getHP() {
@@ -23,4 +24,8 @@ string Monster::getAtaque() {
 
 void Monster::setAtaque(double pAtk) {
 	ataque = pAtk;
+}
+
+int Monster::getDinero() {
+	return dinero;
 }

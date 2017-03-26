@@ -1,3 +1,4 @@
+#include "Reino.h"
 #include <string>
 
 #ifndef TIERRA_H

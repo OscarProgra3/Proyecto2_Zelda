@@ -1,3 +1,4 @@
+#include "Ropa.h"
 #include <string>
 
 #ifndef ROJA_H

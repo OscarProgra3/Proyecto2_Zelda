@@ -1,3 +1,4 @@
+#include "Reino.h"
 #include <string>
 
 #ifndef FUEGO_H
