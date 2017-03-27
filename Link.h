@@ -5,6 +5,9 @@
 #include "Items.h"
 #include "Ropa.h"
 
+#ifndef LINK_H
+#define LINK_H
+
 using namespace std;
 
 
@@ -12,7 +15,7 @@ class Link
 {
 	private: 
 	string nombre;
-	int dinero;
+	int rupias;
 	int HP;
 	int ataque;
 	int defensa;
@@ -28,28 +31,29 @@ class Link
 
 		~Link();
 
-		void setNombre(string nombre) ;
+		void setNombre(string) ;
 		string getNombre();
 
-		void setDinero(int dinero) ;
+		void setDinero(int) ;
 		int getDinero();
 
-		void setHP(int HP);
+		void setHP(int);
 		int getHP();
 
-		void setAtaque(int ataque);
+		void setAtaque(int);
 		int getAtaque();
 
-		void setDefensa(int idefensa) ; 
+		void setDefensa(int) ; 
 		int getDefensa();
 
-		void setListaRopa(vector<Ropa*> ListaRopa);
+		void setListaRopa(vector<Ropa*>);
 		vector<Ropa*> getListaRopa();
 
-		void setListaArmas(vector<Armas*> ListaArmas); 
+		void setListaArmas(vector<Armas*>); 
 		vector<Armas*> getListaArmas();
 
-		void setListaItems(vector<Items*> ListaItems); 
-		vector<Items*> getListaItems() ;
+		void setListaItems(vector<Items*>); 
+		vector<Items*> getListaItems();
 };
+
 #endif

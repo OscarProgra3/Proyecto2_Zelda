@@ -55,16 +55,16 @@ Roja.o: Roja.h Roja.cpp Ropa.h
 Verde.o: Verde.h Verde.cpp Ropa.h
 	g++ -c Verde.cpp
 
-Link.o: Link.h Link.cpp
+Link.o: Link.h Link.cpp Armas.h Items.h Ropa.h
 	g++ -c Link.cpp
 
 Monster.o: Monster.h Monster.cpp
 	g++ -c Monster.cpp
 
-Mundo.o: Mundo.h Mundo.cpp
+Mundo.o: Mundo.h Mundo.cpp Armas.h Items.h
 	g++ -c Mundo.cpp
 
-Tienda.o: Tienda.h Tienda.cpp
+Tienda.o: Tienda.h Tienda.cpp Armas.h Items.h
 	g++ -c Tienda.cpp
 
 Sobrecarga.o: Sobrecarga.h Sobrecarga.cpp

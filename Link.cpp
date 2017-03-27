@@ -1,5 +1,8 @@
 #include "Link.h"
 
+Link::Link() {
+}
+
 Link::Link(string pnombre,int prupias,int pHP,int pataque,int pdefensa,vector<Ropa*> pListaRopa,vector<Armas*> pListaArmas,vector<Items*> pListaItems)
 {
 	nombre=pnombre;
@@ -13,72 +16,84 @@ Link::Link(string pnombre,int prupias,int pHP,int pataque,int pdefensa,vector<Ro
 
 }
 
-
-void setNombre(string tnombre)
-{ 
-	this->nombre = tnombre; 
-} 
-string getNombre() {
-	return this->tnombre;
+Link::~Link(){
 }
 
-void setDinero(int trupias) 
+string Link::getNombre() {
+	return nombre;
+}
+
+void Link::setNombre(string tnombre)
+{ 
+	nombre = tnombre; 
+}
+
+void Link::setDinero(int trupias) 
 {
-	this->rupias = trupias;
-} 
-int getDinero()
+	rupias = trupias;
+}
+
+int Link::getDinero()
 {
-	return this->dinero;
+	return rupias;
 }
-void setHP(int tHP) 
+
+void Link::setHP(int tHP) 
 {
-	this->HP = tHP; 
+	HP = tHP; 
 } 
-int getHP() 
+
+int Link::getHP() 
 { 
-	return this->HP;
+	return HP;
 }
 
-void setAtaque(int tataque) 
+void Link::setAtaque(int tataque) 
 { 
-	this->ataque = tataque; 
-}
-int getAtaque()
-{ 
-	return this->ataque; 
+	ataque = tataque; 
 }
 
-void setDefensa(int tdefensa) 
+int Link::getAtaque()
 { 
-	this->defensa = tdefensa;
-} 
-int getDefensa() 
-{ 
-	return this->defensa; 
+	return ataque; 
 }
 
-
-
-void setListaRopa(vector<Ropa*> tListaRopa) 
+void Link::setDefensa(int tdefensa) 
 { 
-	this->ListaRopa = tListaRopa; 
+	defensa = tdefensa;
 } 
-vector<Ropa*> getListaRopa() { return this->ListaRopa; }
 
-void setListaArmas(vector<Armas*> tListaArmas) 
+int Link::getDefensa() 
 { 
-	this->ListaArmas = tListaArmas; 
-} 
-vector<Armas*> getListaArmas() 
-{ 
-	return this->ListaArmas; 
+	return defensa; 
 }
 
-void setListaItems(vector<Items*> tListaItems) 
+void Link::setListaRopa(vector<Ropa*> tListaRopa) 
 { 
-	this->ListaItems = tListaItems; 
+	ListaRopa = tListaRopa; 
 } 
-void setListaItems(vector<Items*> ListaItems) 
+
+vector<Ropa*> Link::getListaRopa() 
 { 
-	return this->ListaItems; 
+	return ListaRopa; 
+}
+
+void Link::setListaArmas(vector<Armas*> tListaArmas) 
+{ 
+	ListaArmas = tListaArmas; 
+} 
+
+vector<Armas*> Link::getListaArmas() 
+{ 
+	return ListaArmas; 
+}
+
+void Link::setListaItems(vector<Items*> tListaItems) 
+{ 
+	ListaItems = tListaItems; 
+} 
+
+vector<Items*> Link::getListaItems() 
+{ 
+	return ListaItems; 
 } 

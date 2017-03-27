@@ -10,7 +10,7 @@ int CofreNormal::probabilidadepica()
 	return 0;
 }
 
-string getTipoCrofre()
+string CofreNormal::getTipoCrofre()
 {
 	return "Normal";
 }

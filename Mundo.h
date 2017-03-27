@@ -2,20 +2,20 @@
 #include "Armas.h"
 #include "Items.h"
 
-#ifndef Tienda_H
-#define Tienda_H
+#ifndef MUNDO_H
+#define MUNDO_H
 
 using namespace std;
 
-class Tienda
+class Mundo
 {
 	private:
 		vector<Armas*> ListaArmas;
 		vector<Items*> ListaItems;		
 	public:
-		Tienda();
-		Tienda(vector<Armas*>,vector<Items*>);
-		~Tienda();
+		Mundo();
+		Mundo(vector<Armas*>,vector<Items*>);
+		~Mundo();
 
 		vector<Armas*> getListaArmas();
 		void setListaArmas(vector<Armas*>);
