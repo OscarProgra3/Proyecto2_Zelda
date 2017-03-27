@@ -19,6 +19,10 @@ class Items {
 		string getNombre();
 		int getPrecio();
 
+		//archivos binarios
+		void write(ofstream&);
+    	void read(ifstream&);
+
 };
 
 #endif

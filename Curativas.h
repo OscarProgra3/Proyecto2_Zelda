@@ -17,6 +17,8 @@ class Curativas : public Items {
 		void setCuracion(int);
 		int getCuracion();
 
+		void write(ofstream&);
+    	void read(ifstream&);
 };
 
 #endif

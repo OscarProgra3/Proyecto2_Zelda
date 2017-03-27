@@ -12,11 +12,47 @@ using namespace std;
 string dibujolink();
 string dibujodemonio();
 
+
+
+
+
+
 int main()
 {
 
   cout<<dibujolink()+"";
   cout<<endl<<"EASTER EGG"<<endl<<dibujodemonio();
+
+
+
+
+  //probar escritura itemcuracion
+ofstream itemcuracion;
+itemcuracion.open("itemcuracion.bin",ios::out);
+Curativas* curativa = new Curativas("dildo",200,300);
+
+curativa->write(itemcuracion);
+
+itemcuracion.close();
+
+//delete curativa;
+
+
+Curativas* curativa2 = new Curativas("",0,0);
+
+ifstream curativain;
+
+curativain.open("itemcuracion.bin",ios::binary);
+
+curativa2->read(ataquesEspIn);
+
+cout <<endl<<"Prueba de sonido: "<< curativa2->getEnergia()<<endl;
+
+delete especial;
+
+ataquesEspIn.close();
+
+
 
   return 0;
 }
