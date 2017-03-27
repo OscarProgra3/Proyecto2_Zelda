@@ -16,7 +16,7 @@ int Armas::getPrecio() {
 	return precio;
 }
 
-void Armas::setNumeroH(int pPrecio) {
+void Armas::setPrecio(int pPrecio) {
 	precio = pPrecio;
 }
 
