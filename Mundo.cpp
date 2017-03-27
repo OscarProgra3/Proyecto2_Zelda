@@ -1,27 +1,30 @@
-#include <Tienda.h>
+#include "Mundo.h"
 
-Tienda::Tienda(vector<Armas*> plistaarmas,vector<Items*> plistaitems)
-{
-	listaarmas=plistaarmas;
-	listaitems=plistaitems;
+Mundo::Mundo() {
 }
 
-vector<Armas*> Tienda::getListaArmas()
+Mundo::Mundo(vector<Armas*> plistaarmas,vector<Items*> plistaitems)
+{
+	ListaArmas=plistaarmas;
+	ListaItems=plistaitems;
+}
+
+vector<Armas*> Mundo::getListaArmas()
 {
 	return ListaArmas;
 }
-void Tienda::setListaArmas(vector<Armas*> tListaArmas)
+
+void Mundo::setListaArmas(vector<Armas*> tListaArmas)
 {
 	ListaArmas=tListaArmas;
 }	
 
-
-
-vector<Items*> Tienda:: getListaItems()
+vector<Items*> Mundo::getListaItems()
 {
 	return ListaItems;
 }
-void Tienda::setListaItems(vector<Items*> tListaItems)
+
+void Mundo::setListaItems(vector<Items*> tListaItems)
 {
 	ListaItems=tListaItems;
 }

@@ -1,9 +1,9 @@
-#include <Tienda.h>
+#include "Tienda.h"
 
 Tienda::Tienda(vector<Armas*> plistaarmas,vector<Items*> plistaitems)
 {
-	listaarmas=plistaarmas;
-	listaitems=plistaitems;
+	ListaArmas = plistaarmas;
+	ListaItems = plistaitems;
 }
 
 vector<Armas*> Tienda::getListaArmas()
@@ -12,7 +12,7 @@ vector<Armas*> Tienda::getListaArmas()
 }
 void Tienda::setListaArmas(vector<Armas*> tListaArmas)
 {
-	ListaArmas=tListaArmas;
+	ListaArmas = tListaArmas;
 }	
 
 
@@ -23,5 +23,5 @@ vector<Items*> Tienda:: getListaItems()
 }
 void Tienda::setListaItems(vector<Items*> tListaItems)
 {
-	ListaItems=tListaItems;
+	ListaItems = tListaItems;
 }

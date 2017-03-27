@@ -10,7 +10,7 @@ Monster::Monster(double pHP, double pAtk, int pDinero) {
 	dinero = pDinero;
 }
 
-int Monster::getHP() {
+double Monster::getHP() {
 	return HP;
 }
 
@@ -18,7 +18,7 @@ void Monster::setHP(double pHP) {
 	HP = pHP;
 }
 
-string Monster::getAtaque() {
+double Monster::getAtaque() {
 	return ataque;
 }
 

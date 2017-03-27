@@ -13,7 +13,7 @@ int Items::getPrecio() {
 	return precio;
 }
 
-void Items::setNumeroH(int pPrecio) {
+void Items::setPrecio(int pPrecio) {
 	precio = pPrecio;
 }
 

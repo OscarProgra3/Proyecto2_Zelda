@@ -1,6 +1,5 @@
 #include <string>
 
-
 #ifndef COFRE_H
 #define COFRE_H
 
@@ -16,10 +15,7 @@ class Cofre
 		Cofre(int);
 
 		virtual string getTipoCrofre();
-		virtual int probabilidad()=0;
+		virtual int probabilidad() = 0;
 		
 };
 #endif
-
-
-

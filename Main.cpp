@@ -2,6 +2,28 @@
 #include <string>
 #include <iostream>
 
+#include "Agua.h"
+#include "ArmaAtk.h"
+#include "ArmaDef.h"
+#include "Armas.h"
+#include "Azul.h"
+#include "Boosts.h"
+#include "Cofre.h"
+#include "CofreEpico.h"
+#include "CofreNormal.h"
+#include "Curativas.h"
+#include "Fuego.h"
+#include "Items.h"
+#include "Link.h"
+#include "Monster.h"
+#include "Mundo.h"
+#include "Reino.h"
+#include "Roja.h"
+#include "Ropa.h"
+#include "Sobrecarga.h"
+#include "Tienda.h"
+#include "Tierra.h"
+#include "Verde.h"
 
 
 #include <fstream>//para archivos binarios

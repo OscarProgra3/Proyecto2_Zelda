@@ -9,9 +9,9 @@ Ropa::Ropa(int pdefensaE) {
 }
 
 int Ropa::getDefensa() {
-	return defensa;
+	return defensaE;
 }
 
 void Ropa::setDefensa(int def) {
-	defensa = def;
+	defensaE = def;
 }
