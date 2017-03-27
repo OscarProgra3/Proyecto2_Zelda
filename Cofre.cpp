@@ -2,5 +2,5 @@
 
 Cofre::Cofre(int pprobabilidad)
 {
-	probabilidad=pprobabilidad;
+	probabilidadepica=pprobabilidad;
 }

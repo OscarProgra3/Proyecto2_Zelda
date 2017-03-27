@@ -16,7 +16,7 @@ class CofreEpico : public Cofre
 
 
 
-		int probabilidadepica();
+		int probabilidad();
 		string getTipoCrofre();
 		
 	

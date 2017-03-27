@@ -7,7 +7,7 @@ CofreEpico::CofreEpico(int pprobabilidad) :  Cofre(pprobabilidad)
 }
 
 
-int CofreEpico::probabilidadepica()
+int CofreEpico::probabilidad()
 {
 	return 60;
 }

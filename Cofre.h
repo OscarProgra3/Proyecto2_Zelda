@@ -16,7 +16,7 @@ class Cofre
 		Cofre(int);
 
 		virtual string getTipoCrofre();
-		virtual int probabilidadepica()=0;
+		virtual int probabilidad()=0;
 		
 };
 #endif
