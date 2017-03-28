@@ -72,6 +72,8 @@ class Zelda {
 		void dibujoreinoagua();
 		void dibujoreinonutral();
 		void dibujoneutral2();
+		void dibujocofreepico();
+		void dibujoreinofuego();
 
 };
 
