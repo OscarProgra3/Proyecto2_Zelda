@@ -124,8 +124,8 @@ void Zelda::run() {
 		} else if (respuesta1[0] == '3') //Empezar aventura
 		{
 			cleanScreen();
-			mvprintw(8, 20, "BIENVENIDO JOVEN AVENTURROE A LA HERMOSA TIERRA DE LOS REINOS DE HYRULE ");
-			mvprintw(8, 20, "PARA COMENZAR ESTA AVENTURA DEBE INGRESAR EL NOMBRE DEL VALIENTE: ");
+			mvprintw(8, 30, "BIENVENIDO JOVEN AVENTURROE A LA HERMOSA TIERRA DE LOS REINOS DE HYRULE \n");
+			mvprintw(9, 20, "PARA COMENZAR ESTA AVENTURA DEBE INGRESAR EL NOMBRE DEL VALIENTE: ");
 			char nombrelink[50];
 			getstr(nombrelink);
 
@@ -216,3 +216,105 @@ string Zelda::to_string(T pNumber)
 	oOStrStream << pNumber;
 	return oOStrStream.str();
 }*/
+
+void Zelda::dibujoMounstro() {
+	srand(time(NULL));
+	int random=rand()% 3 +1;
+
+	if (random==1)
+	{
+		mvprintw(50,50,"											(								\n");
+		mvprintw(51,50,"		                                    )								\n");
+		mvprintw(52,50,"		                                   (								\n");
+		mvprintw(53,50,"		                                    )								\n");
+		mvprintw(54,50,"		                               [^^^^^^^^^]							\n");
+		mvprintw(55,50,"		                           $$$$           $$$$						\n");
+		mvprintw(56,50,"		                        $$$                   $$$					\n");
+		mvprintw(57,50,"		                      $$                         $$					\n");
+		mvprintw(58,50,"		                     $      (00)         (00)      $				\n");
+		mvprintw(59,50,"		                    $      (0000)       (0000)      $				\n");
+		mvprintw(60,50,"		                   $      (000000)     (000000)      $				\n");
+		mvprintw(61,50,"		                   $       (0000)       (0000)       $				\n");
+		mvprintw(62,50,"		                   $        (00)         (00)        $				\n");
+		mvprintw(63,50,"		                   $                                 $				\n");
+		mvprintw(64,50,"		                    $                               $				\n");
+		mvprintw(65,50,"		                     $                             $				\n");
+		mvprintw(66,50,"		                      $$                         $$					\n");
+		mvprintw(67,50,"		                        $$$                   $$$					\n");
+		mvprintw(68,50,"		                           $$$$           $$$$						\n");
+		mvprintw(69,50,"		                               $$$$$$$$$$$							\n");
+		mvprintw(70,50,"		                               $         $							\n");
+		mvprintw(71,50,"		                           $$$$$         $$$$$						\n");
+		mvprintw(72,50,"		                          $$$$$$         $$$$$$						\n");
+	}
+	if (random==2)
+	{
+		mvprintw(50,50,"			                        .-****-.				\n");
+		mvprintw(51,50,"	                               / _   _ \\			\n");
+		mvprintw(52,50,"	           _..._              | (') (') |			\n");
+		mvprintw(53,50,"	         .'_   _'.       _.-._| ._____, |_.-._  	\n");
+		mvprintw(54,50,"	        / (.) (.) \\     (== |-|    `-`  |-| ==)		\n");
+		mvprintw(55,50,"	   _.-._| ,_____. |_.-._ ``  \\    M    /  			\n");
+		mvprintw(56,50,"	  *(== |-\\    '-'  /-| ==)      '._____.'			\n");
+		mvprintw(57,50,"	        '.__M__.'              //   \\				\n");
+		mvprintw(58,50,"	        __//   \\__            _\\   //_ 			\n");
+		mvprintw(59,50,"	       (___)   (___)          (___) (___)			\n");
+	}
+	if (random==3)
+	{
+		mvprintw(50,50,"		         	 HHH+          		\n");
+		mvprintw(51,50,"               +H+;;;H   +H+   		\n");
+		mvprintw(52,50,"              +H+;;  ;H H+;;+  		\n");
+		mvprintw(53,50,"         +HHHH+;;;;; ;HH+;  H  		\n");
+		mvprintw(54,50,"       +H++;;;;;;;;;;;;++;  ;+ 		\n");
+		mvprintw(55,50,"       H+;;;;;;;;;;;;;;;;;; +H 		\n");
+		mvprintw(56,50,"      +++;;;;;;;;;;H;;;;;;;;+H 		\n");
+		mvprintw(57,50,"      H+;;;;;;;;;;;;;;;;;;;;+H 		\n");
+		mvprintw(58,50,"   +HH+;;;;;;;;;;;;;;;;;;;;;++ 		\n");
+		mvprintw(59,50," HH;;;;;;;;;;H;;;;;;+HH;;;;+H  		\n");
+		mvprintw(60,50,"++;  ;;;;;;;;;;;;+HH;;;;;;;+H  		\n");
+		mvprintw(61,50,"H+; ;;;;;;;;;;;+H;;;;;;;;;;+H  		\n");
+		mvprintw(62,50,"H++;;;;;;;;;;H+;;;;;;;;;;;;+H  		\n");
+		mvprintw(63,50," H++;;;;;;;;H;;;;;;;;;;;;;;++  		\n");
+		mvprintw(64,50," +H+++;;;;;;;;;;;;;;;;;;;;;+;+ 		\n");
+		mvprintw(65,50,"  H++++;;;;;;;;;;;;;;;;;;;;;;H+		\n");
+		mvprintw(66,50,"   H+++;;; ;;;;;;;;;;;;;;;;;;+H 		\n");
+		mvprintw(67,50,"   +H++;;;;;  ;;;;;;;;;;;;;;;HH 		\n");
+		mvprintw(68,50,"   H++;;;;;    ;;;;;;;;;;;;;+H 		\n");
+		mvprintw(69,50,"   H+;;;;;;    ;;;;;;;;;+++HH  		\n");
+		mvprintw(70,50,"  +++;;;;;;;  ;;;;;;;;++++H    		\n");
+		mvprintw(71,50,"  H+;;;;;;;;;;;;;;;;;++HHH     		\n");
+		mvprintw(72,50,"  H++;;;;;;;;+++;;;;;+H        		\n");
+		mvprintw(73,50,"  H++;;;;;;;++++++;;;+H        		\n");
+		mvprintw(74,50,"  +++++;;;++++HHH+++HH         		\n");
+		mvprintw(75,50,"   H+++++++HH+  +HH+           		\n");
+		mvprintw(76,50,"   +H++++H+                    		\n");
+		mvprintw(77,50,"     +HH+							\n");
+	}
+	
+}
+
+
+void getdibujoreinotierra()
+{
+
+
+	mvprintw(50,50,"                                  |>>>													\n");
+	mvprintw(52,50,"                                  |														\n");
+	mvprintw(53,50,"                    |>>>      _  _|_  _         |>>>										\n");
+	mvprintw(54,50,"                    |        |;| |;| |;|        |										\n");
+	mvprintw(55,50,"                _  _|_  _    \\.    .  /    _  _|_  __ 									\n");
+	mvprintw(56,50,"               |;|_|;|_|;|    \\:. ,  /    |;|_|;|_|;|									\n");
+	mvprintw(57,50,"               \\..      /    ||;   . |    \\.    .  /									\n");
+	mvprintw(58,50,"                \\.  ,  /     ||:  .  |     \\:  .  /									\n");
+	mvprintw(59,50,"                 ||:   |_   _ ||_ . _ | _   _||:   |										\n");
+	mvprintw(60,50,"                 ||:  .|||_|;|_|;|_|;|_|;|_|;||:.  |										\n");
+	mvprintw(61,50,"                 ||:   ||.    .     .      . ||:  .|										\n");
+	mvprintw(62,50,"                 ||: . || .     . .   .  ,   ||:   |       \\,/							\n");
+	mvprintw(63,50,"                 ||:   ||:  ,  _______   .   ||: , |            /`\\						\n");
+	mvprintw(64,50,"                 ||:   || .   /+++++++\\    . ||:   |										\n");
+	mvprintw(65,50,"                 ||:   ||.    |+++++++| .    ||: . |										\n");
+	mvprintw(66,50,"              __ ||: . ||: ,  |+++++++|.  . _||_   |										\n");
+	mvprintw(67,50,"     ____--`~    '--~~__|.    |+++++__|----~    ~`---,              ___ 					\n");
+	mvprintw(68,50,"-~--~                   ~---__|,--~'                  ~~----_____-~'   `~----~~			\n");
+}
