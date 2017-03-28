@@ -210,7 +210,25 @@ void Zelda::run() {
 			cleanScreen();
 		} else if (respuesta1[0] == '4')
 		{
-			imprimir();
+			mvprintw(5, 20, "QUE DESEA IMPRIMIR?");
+			mvprintw(6, 20, "1) VER ITEMS DISPONIBLES");
+			mvprintw(7, 20, "2) VER ARMAS DISPONIBLES");
+			mvprintw(8, 20, "3) VER MOUNSTROS VIVOS");
+			mvprintw(9, 20, "ELIGA UNA OPCION: ");
+			char tipoImprimir[1];
+			getstr(tipoImprimir);
+			if (tipoImprimir[0] == '1')
+			{
+				cleanScreen();
+				imprimirItems();
+			} else if (tipoImprimir[0] == '2')
+			{
+				cleanScreen();
+				imprimirArmas();
+			} else {
+				cleanScreen();
+				imprimirMonsters();
+			}
 		} else {
 			seguir = false;
 		}
@@ -237,7 +255,7 @@ void Zelda::run() {
 	endwin();
 }
 
-void Zelda::imprimir() {
+void Zelda::imprimirItems() {
 	string nom1;
 	int p1, c1;
 	int cont = 5;
@@ -285,34 +303,135 @@ void Zelda::imprimir() {
 			cont++;
 		}
 	}
+	mvprintw(cont, 20, "APRETE CUALQUIER TECLA PARA CONTINUAR: ");
+	getch();
+	cleanScreen();
+}
 
+void Zelda::imprimirArmas() {
 	string nombre;
 	int precio;
 	bool magico;
 	int ataque;
 	int defensa;
+	int cont = 5;
 
 	mvprintw(cont, 20, "LAS ARMAS DISPONIBLES SON: ");
 	cont++;
 	for (int i = 0; i < listaArmas.size(); ++i)
 	{
+		nombre = listaArmas.at(i) -> getNombre();
+		precio = listaArmas.at(i) -> getPrecio();
+		magico = listaArmas.at(i) -> getMagico();
+		ataque = listaArmas.at(i) -> getAtaque();
+		defensa = listaArmas.at(i) -> getDefensa();
 		if (listaArmas.at(i) -> getTipo() == "Ataque")
 		{
-			nombre = listaArmas.at(i) -> getNombre();
-			precio = listaArmas.at(i) -> getPrecio();
-			magico = listaArmas.at(i) -> getMagico();
-			ataque = listaArmas.at(i) -> getAtaque();
-			defensa = listaArmas.at(i) -> getDefensa();
+			char myArray2[nombre.size()+1];
+			strcpy(myArray2, nombre.c_str());
 			if (magico == true)
 			{
-				
+				mvprintw(cont, 20, "%i", (i+1));
+				mvprintw(cont, 21, ")");
+				cont++;
+				mvprintw(cont, 20, "TIPO: ATAQUE");
+				cont++;
+				mvprintw(cont, 20, "NOMBRE: %s", myArray2);
+				cont++;
+				mvprintw(cont, 20, "PRECIO: %i", precio);
+				cont++;
+				mvprintw(cont, 20, "ES MAGICO? - SI");
+				cont++;
+				mvprintw(cont, 20, "ATAQUE: %i", ataque);
+				cont++;
+				mvprintw(cont, 20, "DEFENSA: %i", defensa);
+				cont++;
 			} else {
-
+				mvprintw(cont, 20, "%i", (i+1));
+				mvprintw(cont, 21, ")");
+				cont++;
+				mvprintw(cont, 20, "TIPO: ATAQUE");
+				cont++;
+				mvprintw(cont, 20, "NOMBRE: %s", myArray2);
+				cont++;
+				mvprintw(cont, 20, "PRECIO: %i", precio);
+				cont++;
+				mvprintw(cont, 20, "ES MAGICO? - NO");
+				cont++;
+				mvprintw(cont, 20, "ATAQUE: %i", ataque);
+				cont++;
+				mvprintw(cont, 20, "DEFENSA: %i", defensa);
+				cont++;
 			}
 		} else {
-
+			char myArray2[nombre.size()+1];
+			strcpy(myArray2, nombre.c_str());
+			if (magico == true)
+			{
+				mvprintw(cont, 20, "%i", (i+1));
+				mvprintw(cont, 21, ")");
+				cont++;
+				mvprintw(cont, 20, "TIPO: DEFENSA");
+				cont++;
+				mvprintw(cont, 20, "NOMBRE: %s", myArray2);
+				cont++;
+				mvprintw(cont, 20, "PRECIO: %i", precio);
+				cont++;
+				mvprintw(cont, 20, "ES MAGICO? - SI");
+				cont++;
+				mvprintw(cont, 20, "ATAQUE: %i", ataque);
+				cont++;
+				mvprintw(cont, 20, "DEFENSA: %i", defensa);
+				cont++;
+			} else {
+				mvprintw(cont, 20, "%i", (i+1));
+				mvprintw(cont, 21, ")");
+				cont++;
+				mvprintw(cont, 20, "TIPO: DEFENSA");
+				cont++;
+				mvprintw(cont, 20, "NOMBRE: %s", myArray2);
+				cont++;
+				mvprintw(cont, 20, "PRECIO: %i", precio);
+				cont++;
+				mvprintw(cont, 20, "ES MAGICO? - NO");
+				cont++;
+				mvprintw(cont, 20, "ATAQUE: %i", ataque);
+				cont++;
+				mvprintw(cont, 20, "DEFENSA: %i", defensa);
+				cont++;
+			}
 		}
 	}
+	mvprintw(cont, 20, "APRETE CUALQUIER TECLA PARA CONTINUAR: ");
+	getch();
+	cleanScreen();
+}
+
+void Zelda::imprimirMonsters() {
+	int cont = 5;
+	int HP;
+	int ataque;
+	int dinero;
+
+	mvprintw(cont, 20, "LOS MOUSNTROS QUE EXITEN SON: ");
+	cont++;
+	for (int i = 0; i < listaMonsters.size(); ++i)
+	{
+		HP = listaMonsters.at(i) -> getHP();
+		ataque = listaMonsters.at(i) -> getAtaque();
+		dinero = listaMonsters.at(i) -> getDinero();
+
+		mvprintw(cont, 20, "%i", (i+1));
+		mvprintw(cont, 21, ")");
+		cont++;
+		mvprintw(cont, 20, "HP: %i", HP);
+		cont++;
+		mvprintw(cont, 20, "ATAQUE: %i", ataque);
+		cont++;
+		mvprintw(cont, 20, "DINERO: %i", dinero);
+		cont++;
+	}
+	mvprintw(cont, 20, "APRETE CUALQUIER TECLA PARA CONTINUAR: ");
 	getch();
 	cleanScreen();
 }
