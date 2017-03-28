@@ -154,7 +154,7 @@ void Zelda::run() {
 		} else if (respuesta1[0] == '3') //Empezar aventura
 		{
 
-			Link* link;
+			
 			Mundo* mundo;
 
 			mundo=new Mundo(listaArmas,listaItems);
@@ -192,10 +192,34 @@ void Zelda::run() {
 			char myArray[strnombrelink.size()+1];
 			strcpy(myArray, strnombrelink.c_str());
 			mvprintw(1, 30, "Como eres nuevo en esta aventura joven %s",myArray);
-			mvprintw(2,30,"¡¡¡¡¡¡¡¡¡¡¡	TE CONCEDEREMOS 300 RUPIAS!!!!!!!!!!!!!  \n");
+			mvprintw(2,30,"¡¡¡¡¡¡¡¡¡¡¡	TE CONCEDEREMOS 300 RUPIAS !!!!!!!!!!!!  \n");
+			mvprintw(3,30,"¡¡¡¡¡¡¡¡¡¡¡  TIENES 1000 DE HP          !!!!!!!!!!!!  \n");
+			mvprintw(4,30,"¡¡¡¡¡¡¡¡¡¡¡	500 DE ATAQUE              !!!!!!!!!!!!  \n");
+			mvprintw(5,30,"¡¡¡¡¡¡¡¡¡¡¡	500 DE DEFENSA             !!!!!!!!!!!!  \n");
+			mvprintw(6,30,"¡¡¡¡¡¡¡¡¡¡¡	Y ANDAS CON LOS ROPAJES VERDES               !!!!!!!!!!!!  \n");		
 			getch();
 			int bolsarupias=300;
+			int HP=1000;
+			int ataque=500;
+			int defensa=500;
+			int tiporopa=1;
+
+			vector<Ropa*> ropajes;
+			vector<Armas*> ListaArmaslink;
+			vector<Items*> ListaItemslink;	
+
+			Link* link;
+			link=new Link(strnombrelink,bolsarupias,HP,ataque,defensa,tiporopa,ropajes,ListaArmaslink,ListaItemslink);
+			getch();
+			cleanScreen();
+			dibujoreinonutral();
+			dibujoneutral2();
+			getch();
+
+			mvprintw(1, 30, "AHORA PARTIRAS A TU AVENTURA A LAS TIERRAS DE ESTE MUNDO %s",myArray);
 			
+
+
 			
 
 
@@ -442,29 +466,29 @@ void Zelda::dibujoMounstro() {
 
 	if (random==1)
 	{
-		mvprintw(50,50,"											(								\n");
-		mvprintw(51,50,"		                                    )								\n");
-		mvprintw(52,50,"		                                   (								\n");
-		mvprintw(53,50,"		                                    )								\n");
-		mvprintw(54,50,"		                               [^^^^^^^^^]							\n");
-		mvprintw(55,50,"		                           $$$$           $$$$						\n");
-		mvprintw(56,50,"		                        $$$                   $$$					\n");
-		mvprintw(57,50,"		                      $$                         $$					\n");
-		mvprintw(58,50,"		                     $      (00)         (00)      $				\n");
-		mvprintw(59,50,"		                    $      (0000)       (0000)      $				\n");
-		mvprintw(60,50,"		                   $      (000000)     (000000)      $				\n");
-		mvprintw(61,50,"		                   $       (0000)       (0000)       $				\n");
-		mvprintw(62,50,"		                   $        (00)         (00)        $				\n");
-		mvprintw(63,50,"		                   $                                 $				\n");
-		mvprintw(64,50,"		                    $                               $				\n");
-		mvprintw(65,50,"		                     $                             $				\n");
-		mvprintw(66,50,"		                      $$                         $$					\n");
-		mvprintw(67,50,"		                        $$$                   $$$					\n");
-		mvprintw(68,50,"		                           $$$$           $$$$						\n");
-		mvprintw(69,50,"		                               $$$$$$$$$$$							\n");
-		mvprintw(70,50,"		                               $         $							\n");
-		mvprintw(71,50,"		                           $$$$$         $$$$$						\n");
-		mvprintw(72,50,"		                          $$$$$$         $$$$$$						\n");
+		mvprintw(5,50,"											(								\n");
+		mvprintw(6,50,"		                                    )								\n");
+		mvprintw(7,50,"		                                   (								\n");
+		mvprintw(8,50,"		                                    )								\n");
+		mvprintw(9,50,"		                               [^^^^^^^^^]							\n");
+		mvprintw(10,50,"		                           $$$$           $$$$						\n");
+		mvprintw(11,50,"		                        $$$                   $$$					\n");
+		mvprintw(12,50,"		                      $$                         $$					\n");
+		mvprintw(13,50,"		                     $      (00)         (00)      $				\n");
+		mvprintw(14,50,"		                    $      (0000)       (0000)      $				\n");
+		mvprintw(15,50,"		                   $      (000000)     (000000)      $				\n");
+		mvprintw(16,50,"		                   $       (0000)       (0000)       $				\n");
+		mvprintw(17,50,"		                   $        (00)         (00)        $				\n");
+		mvprintw(18,50,"		                   $                                 $				\n");
+		mvprintw(19,50,"		                    $                               $				\n");
+		mvprintw(20,50,"		                     $                             $				\n");
+		mvprintw(21,50,"		                      $$                         $$					\n");
+		mvprintw(22,50,"		                        $$$                   $$$					\n");
+		mvprintw(23,50,"		                           $$$$           $$$$						\n");
+		mvprintw(24,50,"		                               $$$$$$$$$$$							\n");
+		mvprintw(25,50,"		                               $         $							\n");
+		mvprintw(26,50,"		                           $$$$$         $$$$$						\n");
+		mvprintw(27,50,"		                          $$$$$$         $$$$$$						\n");
 	}
 	if (random==2)
 	{
@@ -514,7 +538,7 @@ void Zelda::dibujoMounstro() {
 }
 
 
-void getdibujoreinotierra()
+void Zelda::getdibujoreinotierra()
 {
 
 
@@ -536,4 +560,100 @@ void getdibujoreinotierra()
 	mvprintw(66,50,"              __ ||: . ||: ,  |+++++++|.  . _||_   |										\n");
 	mvprintw(67,50,"     ____--`~    '--~~__|.    |+++++__|----~    ~`---,              ___ 					\n");
 	mvprintw(68,50,"-~--~                   ~---__|,--~'                  ~~----_____-~'   `~----~~			\n");
+}
+
+void Zelda::dibujocofrenormal()
+{
+	mvprintw(10,40,"	                _.--.							\n");
+	mvprintw(10,40,"                        _.-'_:-'||					\n");
+	mvprintw(10,40,"                    _.-'_.-::::'||					\n");
+	mvprintw(10,40,"               _.-:'_.-::::::'  ||					\n");
+	mvprintw(10,40,"             .'`-.-:::::::'     ||					\n");
+	mvprintw(10,40,"            /.'`;|:::::::'      ||_ 				\n");
+	mvprintw(10,40,"           ||   ||::::::'     _.;._'-._ 			\n");
+	mvprintw(10,40,"           ||   ||:::::'  _.-!oo @.!-._'-.			\n");	
+	mvprintw(10,40,"           \'.  ||:::::.-!()oo @!()@.-'_.|			\n");
+	mvprintw(10,40,"            '.'-;|:.-'.&$@.& ()$%-'o.'\\U||			\n");
+	mvprintw(10,40,"              `>'-.!@*()@'@_*-'_.-o _.|'||			\n");
+	mvprintw(10,40,"               ||-._'-.@.-'_.-' _.-o  |'||			\n");
+	mvprintw(10,40,"               ||=[ '-._.-\\U/.-'    o |'||			\n");
+	mvprintw(10,40,"               || '-.]=|| |'|      o  |'||			\n");
+	mvprintw(10,40,"               ||      || |'|        _| ';			\n");
+	mvprintw(10,40,"               ||      || |'|    _.-'_.-'			\n");
+	mvprintw(10,40,"               |'-._   || |'|_.-'_.-'				\n");
+	mvprintw(10,40,"                '-._'-.|| |' `_.-'					\n");
+	mvprintw(10,40,"                    '-.||_/.-'						\n");
+}
+
+void Zelda::dibujoreinoagua()
+{
+
+	mvprintw(10,40,"            ^^                   @@@@@@@@@									\n");
+	mvprintw(11,40,"       ^^       ^^            @@@@@@@@@@@@@@@								\n");
+	mvprintw(12,40,"                            @@@@@@@@@@@@@@@@@@              ^^				\n");
+	mvprintw(13,40,"                           @@@@@@@@@@@@@@@@@@@@								\n");
+	mvprintw(14,40," ~~~~ ~~ ~~~~~ ~~~~~~~~ ~~ &&&&&&&&&&&&&&&&&&&& ~~~~~~~ ~~~~~~~~~~~ ~~~		\n");
+	mvprintw(15,40," ~         ~~   ~  ~       ~~~~~~~~~~~~~~~~~~~~ ~       ~~     ~~ ~			\n");
+	mvprintw(16,40,"   ~      ~~      ~~ ~~ ~~  ~~~~~~~~~~~~~ ~~~~  ~     ~~~    ~ ~~~  ~ ~~	\n");
+	mvprintw(17,40,"   ~  ~~     ~         ~      ~~~~~~  ~~ ~~~       ~~ ~ ~~  ~~ ~			\n");
+	mvprintw(18,40," ~  ~       ~ ~      ~           ~~ ~~~~~~  ~      ~~  ~             ~~		\n");
+	mvprintw(19,40,"       ~             ~        ~      ~      ~~   ~             ~			\n");
+
+}
+
+void Zelda::dibujoreinonutral()
+{
+
+	mvprintw(12,70,"                                   -;'  -.										\n");
+	mvprintw(13,70,"            ``                      `.   `.										\n");
+	mvprintw(14,70,"                                      ;    `									\n");
+	mvprintw(15,70,"             `;                  -          ;         -.        ;`				\n");
+	mvprintw(16,70,"               `-  `.         .'`  .-'             .--`  ;     ;				\n");
+	mvprintw(17,70,"                ;    `-.   ;    `-'             .;`     ;       `.				\n");
+	mvprintw(18,70,"                .        ``														\n");
+	mvprintw(19,70,"                 `            .--------.             .'							\n");
+	mvprintw(20,70,"               ...        .--'``````````'--.        ;.							\n");
+	mvprintw(21,70,"              `      . .-' .``          ``. '-. .      `.						\n");
+	mvprintw(22,70,"            ;-.;  .  .' .`                  `. '.  .    ;						\n");
+	mvprintw(23,70,"                .' .' .`                      `. '. '.    .						\n");
+	mvprintw(24,70,"  _____/'.-..___________________________ mvn,, ___________________ 				\n");
+	mvprintw(25,70,"                               )\\     nMmIEFooPTn								\n");
+	mvprintw(26,70,"                              ( (    Li1iiJl1ItTIjp								\n");
+	mvprintw(27,70,"                               ) \\  i i_BP_LWmKK`  J  `							\n");
+	mvprintw(28,70,"  `                .          /  (   i1 LL 1I`L            .					\n");
+	mvprintw(29,70,"               ..             \\   \\  i   X  Y o1								\n");
+	mvprintw(30,70,"                          .    )   )  `   l   p      ..							\n");
+	mvprintw(30,70,"  ;                           /   (,      l(@) l                ..				\n");
+	mvprintw(31,70,"    q      ` .  '            (     \\.     i    p   R          .;				\n");
+	mvprintw(32,70,"     \\  t            ;        )     \\`   j,.. ,.q,/Pqoj          `				\n");
+	mvprintw(33,70,"      \\/            `       ./       \\`;     `'     `          ..				\n");
+	mvprintw(34,70,"    '-     \\;            -'.'    ;    \\ `                     `. `				\n");
+	mvprintw(35,70,"  .--.`.; ,-.. ,.-, ;' `.-'       `    `.'.   .--.""-._        .;				\n");
+	mvprintw(36,70,"      `............---""     ;_.         )   (  '=    /         `-				\n");
+	mvprintw(37,70,"   ~                                    /     `------'     .					\n");
+	mvprintw(38,70,"                   ~                  ,'  \\|//            `'					\n");
+	mvprintw(39,70,"                  ~           ~       ; `. ""                   ..				\n");
+	mvprintw(40,70,"                                       `.  )     \"       .--""""				\n");
+
+
+}
+
+void Zelda::dibujoneutral2()
+{
+mvprintw(20,1,"	           ,-_                  (`  ).				");
+mvprintw(21,1,"                      |-_'-,              (     ).	");
+mvprintw(22,1,"                      |-_'-'           _(        '`.	");
+mvprintw(23,1,"             _        |-_'/        .=(`(      .     )");
+mvprintw(24,1,"            /;-,_     |-_'        (     (.__.:-`-_.'	");
+mvprintw(25,1,"           /-.-;,-,___|'          `(       ) )		");
+mvprintw(26,1,"          /;-;-;-;_;_/|\\_ _ _ _ _   ` __.:'   )		");
+mvprintw(27,1,"             x_( __`|_P_|`-;-;-;,|        `--'		");
+mvprintw(28,1,"             |\\ \\    _||   `-;-;-'				");
+mvprintw(29,1,"             | \\`   -_|.      '-'	");
+mvprintw(30,1,"             | /   /-_| `			");
+mvprintw(31,1,"             |/   ,'-_|  \\				");
+mvprintw(32,1,"             /____|'-_|___\\			");
+mvprintw(33,1,"      _..,____]__|_\\-_'|_[___,..______ 	");
+mvprintw(34,1,"     '                          ``'--,..,.   	");
+
 }

@@ -64,6 +64,10 @@ class Zelda {
 		void dibujoMounstro();
 		void getdibujoreinotierra(); 
 		void dibujolinkca();
+		void dibujocofrenormal();
+		void dibujoreinoagua();
+		void dibujoreinonutral();
+		void dibujoneutral2();
 
 };
 
