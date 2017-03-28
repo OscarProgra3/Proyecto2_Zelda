@@ -60,6 +60,8 @@ class Zelda {
 		void cleanScreen();
 		void dibujolink();
 		//string to_string();
+		void dibujoMounstro();
+		void getdibujoreinotierra(); 
 
 };
 

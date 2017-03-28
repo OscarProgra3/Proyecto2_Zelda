@@ -22,7 +22,7 @@ class Monster {
 		int getHP();
 		int getAtaque();
 
-		void dibujoMounstro();
+		//void dibujoMounstro();
 };
 
 #endif

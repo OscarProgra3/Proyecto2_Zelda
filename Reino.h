@@ -19,8 +19,7 @@ class Reino {
 		string getNombre();
 		int getNumeroH();
 		virtual string getTipoHabitante() = 0;
-		virtual void getdibujoreino();
-
+		
 };
 
 #endif

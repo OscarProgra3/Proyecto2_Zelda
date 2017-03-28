@@ -32,6 +32,7 @@ int Monster::getDinero() {
 	return dinero;
 }
 
+<<<<<<< HEAD
 void Monster::setDinero(int pDinero) {
 	dinero = pDinero;
 }
