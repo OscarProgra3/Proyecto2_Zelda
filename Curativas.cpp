@@ -6,6 +6,7 @@ Curativas::Curativas() {
 
 Curativas::Curativas(string pNombre, int pPrecio, int pCuracion) : Items(pNombre, pPrecio) {
 	curacion = pCuracion;
+	tipo = "Curativa";
 }
 
 Curativas::Curativas(Curativas* curativa)
@@ -13,16 +14,17 @@ Curativas::Curativas(Curativas* curativa)
 	curativa=curativa;
 }
 
-
-int Curativas::getCuracion() {
+int Curativas::getNum() {
 	return curacion;
 }
 
-void Curativas::setCuracion(int pCuracion) {
+void Curativas::setNum(int pCuracion) {
 	curacion = pCuracion;
 }
 
-
+string Curativas::getTipo() {
+	return tipo;
+}
 
 
 //-----------------

@@ -10,13 +10,15 @@ class Curativas : public Items {
 
 	private:
 		int curacion;
+		string tipo;
 
 	public:
 		Curativas();
 		Curativas(Curativas*);
 		Curativas(string, int, int);
-		void setCuracion(int);
-		int getCuracion();
+		void setNum(int);
+		int getNum();
+		string getTipo();
 
 		//void write(ofstream&);
     	//void read(ifstream&);

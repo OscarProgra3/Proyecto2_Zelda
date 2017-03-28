@@ -6,12 +6,17 @@ Boosts::Boosts() {
 
 Boosts::Boosts(string pNombre, int pPrecio, int pAumento) : Items(pNombre, pPrecio) {
 	aumento = pAumento;
+	tipo = "Boost";
 }
 
-int Boosts::getAumento() {
+int Boosts::getNum() {
 	return aumento;
 }
 
-void Boosts::setAumento(int pAumento) {
+void Boosts::setNum(int pAumento) {
 	aumento = pAumento;
+}
+
+string Boosts::getTipo() {
+	return tipo;
 }
