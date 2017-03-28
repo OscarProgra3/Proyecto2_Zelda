@@ -44,17 +44,23 @@ void dibujologo();
 
 
 void run();
-
-
 void boardPic();
-
-
 void cleanScreen();
 
 
 
 int main()
 {
+
+	vector<Items*> listaitems;
+	vector<Armas*> listaarmas;
+	vector<Monster*> listamonster;
+	Link* link;
+	Mundo* mundo;
+
+
+	run(listaitems,listaarmas,listamonster);
+
 
 	initscr();
 	start_color();
@@ -70,17 +76,20 @@ int main()
 
 	dibujologo();
 	getch();
+	
+	cleanScreen();
+	dibujolink();
+//	getch();
+	//noecho();
+	
 
-	noecho();
-  //	move(4,80);
-  	/*char  namePlayer1[50];
+  	move(18,80);
+  	char  namePlayer1[50];
 	printw("Name of player 1: ");
 	getstr(namePlayer1);
-*/
+	string namePlayer1String = static_cast<char*>(namePlayer1);
 
 
-	vector<Items*> listaitems;
-	vector<Armas*> listaarmas;
 
 	//cleanScreen();
 
@@ -108,14 +117,15 @@ Mundo* mundo=new Mundo(listaarmas,listaitems);
 
 void run()
 {
-
+	int resp=9;
+	while
 
 }
 
 void dibujolink()
 {
   
-mvprintw(1,20,"      .---_   _--._---.__ \n    /   _ \\/\\     \\     ''-. \n   |   / \\ | \\      '.     '.     .'¯| \n   |  / __\\|  '.      '.     '    \\ _| \n   | | |_  .-'_'.      .    _.-|  $$ \n   | | \\U\\ .¯U' '..    _.-' .'  $$ \n    \\| /¯ /  ¯¯     ' |'   .'|   $$ \n      \\| '-          '|  .'  |  $$ \n        \\ --         /.      \\ $$ \n         \\          .'   __   |$$ \n          '.   ___.'  | ////¯¯''.._ \n            ¯|¯      _'.//_ ..   |||| \n       _ .-¯|\\|----¯¯¯  |\\|¯¯|---|||| \n    .-¯.'  |  X      .''  \\  |       ''. \n   '    ''..      .''__... |/           '. \n   | |    .|   .' .-   / \\|              | \n  /  '      '.'...'   /  /               | \n /_ |        '       /  /     |          | \n  |¯|                 '  '     \\| __.-.___.' \n  | |              /  /        |\\         \\  \n  | .             /  /           |        . \n  | '            '  '            |        ' \n   \\ .        /  /               '        | \n   /  '      '  '                 |       \\ \n  /   '                           |        |\n");
+mvprintw(1,1,"      .---_   _--._---.__ \n    /   _ \\/\\     \\     ''-. \n   |   / \\ | \\      '.     '.     .'¯| \n   |  / __\\|  '.      '.     '    \\ _| \n   | | |_  .-'_'.      .    _.-|  $$ \n   | | \\U\\ .¯U' '..    _.-' .'  $$ \n    \\| /¯ /  ¯¯     ' |'   .'|   $$ \n      \\| '-          '|  .'  |  $$ \n        \\ --         /.      \\ $$ \n         \\          .'   __   |$$ \n          '.   ___.'  | ////¯¯''.._ \n            ¯|¯      _'.//_ ..   |||| \n       _ .-¯|\\|----¯¯¯  |\\|¯¯|---|||| \n    .-¯.'  |  X      .''  \\  |       ''. \n   '    ''..      .''__... |/           '. \n   | |    .|   .' .-   / \\|              | \n  /  '      '.'...'   /  /               | \n /_ |        '       /  /     |          | \n  |¯|                 '  '     \\| __.-.___.' \n  | |              /  /        |\\         \\  \n  | .             /  /           |        . \n  | '            '  '            |        ' \n   \\ .        /  /               '        | \n   /  '      '  '                 |       \\ \n  /   '                           |        |\n");
   //return linkp;
 }
 
