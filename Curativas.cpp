@@ -4,9 +4,16 @@
 Curativas::Curativas() {
 }
 
+
 Curativas::Curativas(string pNombre, int pPrecio, int pCuracion) : Items(pNombre, pPrecio) {
 	curacion = pCuracion;
 }
+
+Curativas::Curativas(Curativas* curativa)
+{
+	curativa=curativa;
+}
+
 
 int Curativas::getCuracion() {
 	return curacion;
@@ -20,15 +27,14 @@ void Curativas::setCuracion(int pCuracion) {
 
 
 //-----------------
-
+/*
 void Curativas::write(ofstream& out){
    dynamic_cast<Items*>(this)->write(out);
-   out.write(reinterpret_cast<char*>(&curacion),sizeof(curacion))
+   out.write(reinterpret_cast<char*>(&curacion),sizeof(curacion));
 }
 
 void Curativas::read(ifstream& in){
-  in.read(reinterpret_cast<char*>(nombre),sizeof(nombre));
+  in.read(reinterpret_cast<char*>(&nombre),sizeof(nombre));
   in.read(reinterpret_cast<char*>(&precio),sizeof(precio));
   in.read(reinterpret_cast<char*> (&curacion),sizeof(curacion));
-
-}
+}*/

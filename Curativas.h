@@ -13,12 +13,13 @@ class Curativas : public Items {
 
 	public:
 		Curativas();
+		Curativas(Curativas*);
 		Curativas(string, int, int);
 		void setCuracion(int);
 		int getCuracion();
 
-		void write(ofstream&);
-    	void read(ifstream&);
+		//void write(ofstream&);
+    	//void read(ifstream&);
 };
 
 #endif

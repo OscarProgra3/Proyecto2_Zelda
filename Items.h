@@ -1,4 +1,5 @@
 #include <string>
+#include <fstream>
 
 #ifndef ITEMS_H
 #define ITEMS_H
@@ -20,8 +21,8 @@ class Items {
 		int getPrecio();
 
 		//archivos binarios
-		void write(ofstream&);
-    	void read(ifstream&);
+		//void write(ofstream&);
+    	//void read(ifstream&);
 
 };
 

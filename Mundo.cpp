@@ -1,6 +1,7 @@
 #include "Mundo.h"
 
-Mundo::Mundo() {
+Mundo::Mundo()
+{
 }
 
 Mundo::Mundo(vector<Armas*> plistaarmas,vector<Items*> plistaitems)

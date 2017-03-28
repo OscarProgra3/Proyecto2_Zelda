@@ -15,7 +15,7 @@ class Mundo
 	public:
 		Mundo();
 		Mundo(vector<Armas*>,vector<Items*>);
-		~Mundo();
+		//~Mundo();
 
 		vector<Armas*> getListaArmas();
 		void setListaArmas(vector<Armas*>);
