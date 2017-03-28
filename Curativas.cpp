@@ -4,7 +4,6 @@
 Curativas::Curativas() {
 }
 
-
 Curativas::Curativas(string pNombre, int pPrecio, int pCuracion) : Items(pNombre, pPrecio) {
 	curacion = pCuracion;
 }

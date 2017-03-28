@@ -17,8 +17,8 @@ Link::Link(string pnombre,int prupias,int pHP,int pataque,int pdefensa,int propa
 
 }
 
-Link::~Link(){
-}
+/*Link::~Link(){
+}*/
 
 string Link::getNombre() {
 	return nombre;

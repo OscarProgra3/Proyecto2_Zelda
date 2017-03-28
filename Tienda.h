@@ -17,7 +17,7 @@ class Tienda
 		Tienda();
 		Tienda(vector<Armas*>,vector<Items*>);
 		
-		~Tienda();
+		//~Tienda();
 
 		vector<Armas*> getListaArmas();
 		void setListaArmas(vector<Armas*>);

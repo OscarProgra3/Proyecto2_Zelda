@@ -30,7 +30,7 @@ class Link
 		Link();
 		Link(string,int,int,int,int,int,vector<Ropa*>,vector<Armas*>,vector<Items*>);
 
-		~Link();
+		//~Link();
 
 		void setNombre(string) ;
 		string getNombre();

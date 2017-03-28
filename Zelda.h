@@ -1,5 +1,5 @@
 #include <vector>
-#include <string>
+#include <string.h>
 #include <iostream>
 #include <sstream>
 
@@ -9,6 +9,8 @@
 #include <ncurses.h>
 //#include <cstdlib>
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "Agua.h"
 #include "ArmaAtk.h"
 #include "ArmaDef.h"
@@ -57,6 +59,7 @@ class Zelda {
 		void boardPic();
 		void cleanScreen();
 		void dibujolink();
+		//string to_string();
 
 };
 

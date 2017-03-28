@@ -1,5 +1,5 @@
-Main: Main.o Zelda.o
-	g++ Main.o Zelda.o -lncurses -o Main
+Main: Main.o Zelda.o Agua.o ArmaAtk.o Armas.o Azul.o Cofre.o Curativas.o Fuego.o ArmaDef.o Boosts.o CofreEpico.o CofreNormal.o Items.o Link.o Monster.o Mundo.o Reino.o Roja.o Ropa.o Sobrecarga.o Tienda.o Tierra.o Verde.o
+	g++ Main.o Zelda.o Agua.o ArmaAtk.o Armas.o Azul.o Cofre.o Curativas.o Fuego.o ArmaDef.o Boosts.o CofreEpico.o CofreNormal.o Items.o Link.o Monster.o Mundo.o Reino.o Roja.o Ropa.o Sobrecarga.o Tienda.o Tierra.o Verde.o -lncurses -o Main
 
 Main.o: Main.cpp Zelda.h
 	g++ -c Main.cpp

@@ -19,6 +19,10 @@ class Items {
 		void setPrecio(int);
 		string getNombre();
 		int getPrecio();
+		virtual void setCuracion(int);
+		virtual int getCuracion();
+		virtual void setAumento(int);
+		virtual int getAumento();
 
 		//archivos binarios
 		//void write(ofstream&);
