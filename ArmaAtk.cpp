@@ -7,6 +7,7 @@ ArmaAtk::ArmaAtk() {
 ArmaAtk::ArmaAtk(string pNombre, int pPrecio, bool pMagico, int pAtaque, int pDefensa) : Armas(pNombre, pPrecio, pMagico) {
 	ataque = pAtaque;
 	defensa = pDefensa;
+	tipo = "Ataque";
 }
 
 int ArmaAtk::getAtaque() {
@@ -23,4 +24,8 @@ int ArmaAtk::getDefensa() {
 
 void ArmaAtk::setDefensa(int pDef) {
 	defensa = pDef;
+}
+
+string ArmaAtk::getTipo() {
+	return tipo;
 }

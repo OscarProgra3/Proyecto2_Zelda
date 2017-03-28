@@ -14,7 +14,8 @@ using namespace std;
 
 int main()
 {	
-	Zelda zelda;
-	zelda.run();
+	Zelda* zelda;
+	zelda -> run();
+	delete zelda;
   return 0;
 }

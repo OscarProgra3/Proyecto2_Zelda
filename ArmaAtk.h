@@ -8,6 +8,9 @@ using namespace std;
 
 class ArmaAtk : public Armas {
 
+	private:
+		string tipo;
+
 	public:
 		ArmaAtk();
 		ArmaAtk(string, int, bool, int, int);
@@ -15,6 +18,7 @@ class ArmaAtk : public Armas {
 		void setDefensa(int);
 		int getAtaque();
 		int getDefensa();
+		string getTipo();
 
 
 };

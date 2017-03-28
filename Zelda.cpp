@@ -161,7 +161,7 @@ void Zelda::run() {
 
 		} else if (respuesta1[0] == '4')
 		{
-			imprimirItems(listaItems);
+			imprimir();
 		} else {
 			seguir = false;
 		}
@@ -188,20 +188,20 @@ void Zelda::run() {
 	endwin();
 }
 
-void Zelda::imprimirItems(vector<Items*> listaItems2) {
+void Zelda::imprimir() {
 	string nom1;
 	int p1, c1;
 	int cont = 5;
 
 	mvprintw(cont, 20, "LOS ITEMS DISPONIBLES SON: ");
 	cont++;
-	for (int i = 0; i < listaItems2.size(); ++i)
+	for (int i = 0; i < listaItems.size(); ++i)
 	{
-		if (listaItems2.at(i) -> getTipo() == "Curativa")
+		if (listaItems.at(i) -> getTipo() == "Curativa")
 		{
-			string nom1 = listaItems2.at(i) -> getNombre();
-			p1 = listaItems2.at(i) -> getPrecio();
-			c1 = listaItems2.at(i) -> getNum();
+			nom1 = listaItems.at(i) -> getNombre();
+			p1 = listaItems.at(i) -> getPrecio();
+			c1 = listaItems.at(i) -> getNum();
 			char myArray[nom1.size()+1];
 			strcpy(myArray, nom1.c_str());
 			
@@ -217,9 +217,9 @@ void Zelda::imprimirItems(vector<Items*> listaItems2) {
 			mvprintw(cont, 20, "CURACION: %i", c1);
 			cont++;
 		} else {
-			string nom1 = listaItems2.at(i) -> getNombre();
-			p1 = listaItems2.at(i) -> getPrecio();
-			c1 = listaItems2.at(i) -> getNum();
+			nom1 = listaItems.at(i) -> getNombre();
+			p1 = listaItems.at(i) -> getPrecio();
+			c1 = listaItems.at(i) -> getNum();
 			char myArray[nom1.size()+1];
 			strcpy(myArray, nom1.c_str());
 			
@@ -234,6 +234,34 @@ void Zelda::imprimirItems(vector<Items*> listaItems2) {
 			cont++;
 			mvprintw(cont, 20, "AUMENTO: %i", c1);
 			cont++;
+		}
+	}
+
+	string nombre;
+	int precio;
+	bool magico;
+	int ataque;
+	int defensa;
+
+	mvprintw(cont, 20, "LAS ARMAS DISPONIBLES SON: ");
+	cont++;
+	for (int i = 0; i < listaArmas.size(); ++i)
+	{
+		if (listaArmas.at(i) -> getTipo() == "Ataque")
+		{
+			nombre = listaArmas.at(i) -> getNombre();
+			precio = listaArmas.at(i) -> getPrecio();
+			magico = listaArmas.at(i) -> getMagico();
+			ataque = listaArmas.at(i) -> getAtaque();
+			defensa = listaArmas.at(i) -> getDefensa();
+			if (magico == true)
+			{
+				
+			} else {
+
+			}
+		} else {
+
 		}
 	}
 	getch();

@@ -54,7 +54,7 @@ class Zelda {
 
 	public:
 		Zelda();
-		void imprimirItems(vector<Items*>);
+		void imprimir();
 		void run();
 		void dibujologo();
 		void boardPic();
