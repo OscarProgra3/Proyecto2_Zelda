@@ -123,12 +123,61 @@ void Zelda::run() {
 			
 		} else if (respuesta1[0] == '3') //Empezar aventura
 		{
+
+			Link* link;
+			Mundo* mundo;
+
+			mundo=new Mundo(listaArmas,listaItems);
+
+			vector<Armas*> listatiendaarmas;
+			vector<Items*> listatiendaitems;
+			
+			if (listaItems.size()>3 && listaArmas.size()>2)
+			{
+				listatiendaitems.push_back(listaItems.at(0));
+				listatiendaitems.push_back(listaItems.at(2));
+				listatiendaitems.push_back(listaItems.at(3));
+
+				listatiendaarmas.push_back(listaArmas.at(0));
+				listatiendaarmas.push_back(listaArmas.at(2));
+			}
+			
+
+			Tienda* tienda;
+			tienda=new Tienda(listatiendaarmas,listatiendaitems);
+
 			cleanScreen();
+			dibujolinkca();
+			getch();
 			mvprintw(8, 30, "BIENVENIDO JOVEN AVENTURROE A LA HERMOSA TIERRA DE LOS REINOS DE HYRULE \n");
-			mvprintw(9, 20, "PARA COMENZAR ESTA AVENTURA DEBE INGRESAR EL NOMBRE DEL VALIENTE: ");
+			mvprintw(9, 30, "PARA COMENZAR ESTA AVENTURA DEBE INGRESAR EL NOMBRE DEL VALIENTE: ");			
 			char nombrelink[50];
 			getstr(nombrelink);
+			string strnombrelink = static_cast<char*>(nombrelink);
+			cleanScreen();
 
+			dibujolink();
+			
+
+			char myArray[strnombrelink.size()+1];
+			strcpy(myArray, strnombrelink.c_str());
+			mvprintw(1, 30, "Como eres nuevo en esta aventura joven %s",myArray);
+			mvprintw(2,30,"¡¡¡¡¡¡¡¡¡¡¡	TE CONCEDEREMOS 300 RUPIAS!!!!!!!!!!!!!  \n");
+			getch();
+			int bolsarupias=300;
+			
+			
+
+			
+
+
+
+
+
+
+
+
+			cleanScreen();
 		} else {
 			seguir = false;
 		}
@@ -206,7 +255,33 @@ void Zelda::cleanScreen(){
 
 void Zelda::dibujolink()
 {
-	mvprintw(1,20,"      .---_   _--._---.__ \n    /   _ \\/\\     \\     ''-. \n   |   / \\ | \\      '.     '.     .'¯| \n   |  / __\\|  '.      '.     '    \\ _| \n   | | |_  .-'_'.      .    _.-|  $$ \n   | | \\U\\ .¯U' '..    _.-' .'  $$ \n    \\| /¯ /  ¯¯     ' |'   .'|   $$ \n      \\| '-          '|  .'  |  $$ \n        \\ --         /.      \\ $$ \n         \\          .'   __   |$$ \n          '.   ___.'  | ////¯¯''.._ \n            ¯|¯      _'.//_ ..   |||| \n       _ .-¯|\\|----¯¯¯  |\\|¯¯|---|||| \n    .-¯.'  |  X      .''  \\  |       ''. \n   '    ''..      .''__... |/           '. \n   | |    .|   .' .-   / \\|              | \n  /  '      '.'...'   /  /               | \n /_ |        '       /  /     |          | \n  |¯|                 '  '     \\| __.-.___.' \n  | |              /  /        |\\         \\  \n  | .             /  /           |        . \n  | '            '  '            |        ' \n   \\ .        /  /               '        | \n   /  '      '  '                 |       \\ \n  /   '                           |        |\n");
+	
+mvprintw(10,40,"     .---_   _--._---.___ 					\n");
+mvprintw(11,40,"    /   _ \\/\\     \\     ''-.				\n");
+mvprintw(12,40,"   |   / \\ | \\      '.     '.     .'¯|	\n");
+mvprintw(13,40,"   |  / __\\|  '.      '.     '    \\ _|		\n");
+mvprintw(14,40,"   | | |_  .-'_'.      .    _.-|  $$		\n");
+mvprintw(15,40,"   | | \\U\\ .¯U' '..    _.-' .'  $$		\n");
+mvprintw(16,40,"    \\| /¯ /  ¯¯     ' |'   .'|   $$		\n");
+mvprintw(17,40,"      \\| '-          '|  .'  |  $$			\n");
+mvprintw(18,40,"        \\ --         /.      \\ $$			\n");
+mvprintw(19,40,"         \\          .'   __   |$$			\n");
+mvprintw(20,40,"          '.   ___.'  | ////¯¯''.._ 		\n");
+mvprintw(21,40,"            ¯|¯      _'.//_ ..   ||||		\n");
+mvprintw(22,40,"       _ .-¯|\\|----¯¯¯  |\\|¯¯|---||||		\n");
+mvprintw(23,40,"    .-¯.'  |  X      .''  \\  |       ''.	\n");
+mvprintw(24,40,"   '    ''..      .''__... |/           '.	\n");
+mvprintw(25,40,"   | |    .|   .' .-   / \\|              |	\n");
+mvprintw(26,40,"  /  '      '.'...'   /  /               |	\n");
+mvprintw(27,40," /_ |        '       /  /     |          |	\n");
+mvprintw(28,40,"  |¯|                '  '     \\| __.-.___.'	\n");
+mvprintw(29,40,"  | |              /  /        |\\         \\\n");
+mvprintw(30,40,"  | .             /  /           |        .\n");
+mvprintw(31,40,"  | '            '  '            |        '\n");
+mvprintw(32,40,"   \\ .        /  /               '        |\n");
+mvprintw(33,40,"   /  '      '  '                 |       \\\n");
+mvprintw(34,40,"  /   '                           |        |\n");
+  	
 }
 
 /*template <typename T>
@@ -216,6 +291,37 @@ string Zelda::to_string(T pNumber)
 	oOStrStream << pNumber;
 	return oOStrStream.str();
 }*/
+
+
+void Zelda::dibujolinkca()
+{
+mvprintw(10,20,"	                                           ::			\n");
+mvprintw(11,20,"                                              ::			\n");
+mvprintw(12,20,"                                              ::			\n");
+mvprintw(13,20,"                                             ::			\n");
+mvprintw(14,20,"                                             ::			\n");
+mvprintw(15,20,"                              __            ::			\n");
+mvprintw(16,20,"   _..-'/-¯¯--/_         ,.--. ''.     |`\\=,.. 		\n");
+mvprintw(17,20,"-:--.---''-..  /_          |\\\\_\\..  \\    `-.=._/			\n");
+mvprintw(18,20,".-|¯         '.  \\         \\_ \\-`/\\ |    ::`			\n");
+mvprintw(19,20,"  /  @  \\      \\  -_   _..--|-\\¯¯``'--.-/_\\				\n");
+mvprintw(20,20,"  |   .-'|      \\  \\-'\\_/     ¯/-.|-.\\_\\_/				\n");
+mvprintw(21,20,"  \\_./` /        \\_//-''/    .-'						\n");
+mvprintw(22,20,"       |           '-/'@====/              _.--.		\n");
+mvprintw(23,20,"   __.'             /¯¯'-. \\-'.          _/   /¯'		\n");
+mvprintw(24,20,".''____|   /       |'--\\__\\/-._        .'    |			\n");
+mvprintw(25,20," \\ \\_. \\  |       _| -/        \\-.__  /     /			\n");
+mvprintw(26,20,"  \\___\\ '/   _.  ('-..| /       '_  ''   _.'			\n");
+mvprintw(27,20,"        /  .'     ¯¯¯¯ /  ^~    | ``'--''				\n");
+mvprintw(28,20,"       (  / ¯```¯¯¯¯¯|-|        |						\n");
+mvprintw(29,20,"        \\ \\_.         \\ \\      /  						\n");
+mvprintw(30,20,"         \\___\\         '.'.    /							\n");
+mvprintw(31,20,"                         /    |							\n");
+mvprintw(32,20,"                        /   .'							\n");
+mvprintw(33,20,"                       /  .' |							\n");
+mvprintw(34,20,"                     .'  / \\  \\							\n");
+mvprintw(35,20,"                    /___| /___'							\n");
+}
 
 void Zelda::dibujoMounstro() {
 	srand(time(NULL));

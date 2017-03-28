@@ -62,6 +62,7 @@ class Zelda {
 		//string to_string();
 		void dibujoMounstro();
 		void getdibujoreinotierra(); 
+		void dibujolinkca();
 
 };
 
