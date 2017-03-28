@@ -12,7 +12,7 @@ class Tierra : public Reino {
 		Tierra();
 		Tierra(string, int);
 		string getTipoHabitante();
-
+		void getdibujoreino();
 };
 
 #endif

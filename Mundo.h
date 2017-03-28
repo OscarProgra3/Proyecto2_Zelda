@@ -11,7 +11,9 @@ class Mundo
 {
 	private:
 		vector<Armas*> ListaArmas;
-		vector<Items*> ListaItems;		
+		vector<Items*> ListaItems;
+
+		//vector<Monster*> ListaItems;			
 	public:
 		Mundo();
 		Mundo(vector<Armas*>,vector<Items*>);

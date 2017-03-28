@@ -13,7 +13,7 @@
 using namespace std;
 
 int main()
-{
+{	
 	Zelda zelda;
 	zelda.run();
   return 0;
