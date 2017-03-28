@@ -8,19 +8,19 @@ using namespace std;
 class Monster {
 
 	protected:
-		double HP;
-		double ataque;
+		int HP;
+		int ataque;
 		int dinero;
 
 	public:
 		Monster();
-		Monster(double, double, int);
-		void setHP(double);
-		void setAtaque(double);
+		Monster(int, int, int);
+		void setHP(int);
+		void setAtaque(int);
 		void setDinero(int);
 		int getDinero();
-		double getHP();
-		double getAtaque();
+		int getHP();
+		int getAtaque();
 
 		void dibujoMounstro();
 };

@@ -6,30 +6,34 @@
 Monster::Monster() {
 }
 
-Monster::Monster(double pHP, double pAtk, int pDinero) {
+Monster::Monster(int pHP, int pAtk, int pDinero) {
 	HP = pHP;
 	ataque = pAtk;
 	dinero = pDinero;
 }
 
-double Monster::getHP() {
+int Monster::getHP() {
 	return HP;
 }
 
-void Monster::setHP(double pHP) {
+void Monster::setHP(int pHP) {
 	HP = pHP;
 }
 
-double Monster::getAtaque() {
+int Monster::getAtaque() {
 	return ataque;
 }
 
-void Monster::setAtaque(double pAtk) {
+void Monster::setAtaque(int pAtk) {
 	ataque = pAtk;
 }
 
 int Monster::getDinero() {
 	return dinero;
+}
+
+void Monster::setDinero(int pDinero) {
+	dinero = pDinero;
 }
 
 void Monster::dibujoMounstro() {
