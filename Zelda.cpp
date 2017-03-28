@@ -123,7 +123,12 @@ void Zelda::run() {
 			
 		} else if (respuesta1[0] == '3') //Empezar aventura
 		{
-			/* code */
+			cleanScreen();
+			mvprintw(8, 20, "BIENVENIDO JOVEN AVENTURROE A LA HERMOSA TIERRA DE LOS REINOS DE HYRULE ");
+			mvprintw(8, 20, "PARA COMENZAR ESTA AVENTURA DEBE INGRESAR EL NOMBRE DEL VALIENTE: ");
+			char nombrelink[50];
+			getstr(nombrelink);
+
 		} else {
 			seguir = false;
 		}
