@@ -3,13 +3,14 @@
 Link::Link() {
 }
 
-Link::Link(string pnombre,int prupias,int pHP,int pataque,int pdefensa,vector<Ropa*> pListaRopa,vector<Armas*> pListaArmas,vector<Items*> pListaItems)
+Link::Link(string pnombre,int prupias,int pHP,int pataque,int pdefensa,int propaP,vector<Ropa*> pListaRopa,vector<Armas*> pListaArmas,vector<Items*> pListaItems)
 {
 	nombre=pnombre;
 	rupias=prupias;
 	HP=pHP;
 	ataque=pataque;
 	defensa=pdefensa;
+	ropaP = propaP;
 	ListaRopa=pListaRopa;
 	ListaArmas=pListaArmas;
 	ListaItems=pListaItems;
@@ -66,6 +67,16 @@ void Link::setDefensa(int tdefensa)
 int Link::getDefensa() 
 { 
 	return defensa; 
+}
+
+void Link::setRopaP(int tropa) 
+{ 
+	ropaP = tropa;
+} 
+
+int Link::getRopaP() 
+{ 
+	return ropaP; 
 }
 
 void Link::setListaRopa(vector<Ropa*> tListaRopa) 
