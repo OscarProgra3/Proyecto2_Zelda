@@ -1,8 +1,11 @@
-Main: Main.o Agua.o ArmaAtk.o Armas.o Azul.o Cofre.o Curativas.o Fuego.o ArmaDef.o Boosts.o CofreEpico.o CofreNormal.o Items.o Link.o Monster.o Mundo.o Reino.o Roja.o Ropa.o Sobrecarga.o Tienda.o Tierra.o Verde.o
-	g++ Main.o Agua.o ArmaAtk.o Armas.o Azul.o Cofre.o Curativas.o Fuego.o ArmaDef.o Boosts.o CofreEpico.o CofreNormal.o Items.o Link.o Monster.o Mundo.o Reino.o Roja.o Ropa.o Sobrecarga.o Tienda.o Tierra.o Verde.o -lncurses -o Main
+Main: Main.o Zelda.o
+	g++ Main.o Zelda.o -lncurses -o Main
 
-Main.o: Main.cpp Agua.h ArmaAtk.h Armas.h Azul.h Cofre.h Curativas.h Fuego.h ArmaDef.h Boosts.h CofreEpico.h CofreNormal.h Items.h Link.h Monster.h Mundo.h Reino.h Roja.h Ropa.h Sobrecarga.h Tienda.h Tierra.h Verde.h
+Main.o: Main.cpp Zelda.h
 	g++ -c Main.cpp
+
+Zelda.o: Zelda.h Zelda.cpp Agua.h ArmaAtk.h Armas.h Azul.h Cofre.h Curativas.h Fuego.h ArmaDef.h Boosts.h CofreEpico.h CofreNormal.h Items.h Link.h Monster.h Mundo.h Reino.h Roja.h Ropa.h Sobrecarga.h Tienda.h Tierra.h Verde.h
+	g++ -c Zelda.cpp
 
 Reino.o: Reino.h Reino.cpp
 	g++ -c Reino.cpp

@@ -19,6 +19,7 @@ class Link
 	int HP;
 	int ataque;
 	int defensa;
+	int ropaP; //Ropa puesta
 
 	vector<Ropa*> ListaRopa;
 	vector<Armas*> ListaArmas;
@@ -27,7 +28,7 @@ class Link
 
 	public:
 		Link();
-		Link(string,int,int,int,int,vector<Ropa*>,vector<Armas*>,vector<Items*>);
+		Link(string,int,int,int,int,int,vector<Ropa*>,vector<Armas*>,vector<Items*>);
 
 		~Link();
 
@@ -45,6 +46,9 @@ class Link
 
 		void setDefensa(int) ; 
 		int getDefensa();
+
+		void setRopaP(int) ; 
+		int getRopaP();
 
 		void setListaRopa(vector<Ropa*>);
 		vector<Ropa*> getListaRopa();

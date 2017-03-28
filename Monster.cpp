@@ -29,3 +29,7 @@ void Monster::setAtaque(double pAtk) {
 int Monster::getDinero() {
 	return dinero;
 }
+
+void Monster::dibujoMounstro() {
+	
+}
