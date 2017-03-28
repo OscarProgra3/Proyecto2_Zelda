@@ -18,6 +18,7 @@ class Sobrecarga {
 		int getNum();
 		void setNum(int);
 		Sobrecarga* operator+(Sobrecarga*);
+		Sobrecarga* operator-(Sobrecarga*);
 
 		/*friend ostream &operator<<( ostream &output, const Sobrecarga &S ) { 
 			output << " || Items : " << S.items << " Mounstros : " << S.monsters;

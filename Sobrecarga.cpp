@@ -17,6 +17,14 @@ Sobrecarga* Sobrecarga::operator+(Sobrecarga* num1) {
 	return temp;
 }
 
+Sobrecarga* Sobrecarga::operator-(Sobrecarga* num1) {
+	Sobrecarga* temp = new Sobrecarga();
+	int numT;
+	numT = num - num1 -> getNum();
+	temp -> setNum(numT);
+	return temp;
+}
+
 int Sobrecarga::getNum() {
 	return num;
 }

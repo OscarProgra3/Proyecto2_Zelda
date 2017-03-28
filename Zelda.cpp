@@ -16,6 +16,7 @@ void Zelda::run() {
 	bool seguir = true;
 	while(seguir == true) {
 		char respuesta1[1];
+		//Menu
 		mvprintw(5, 20, "BIENVENIDO AL MUNDO DE ZELDA! ESCOGA UNA ACCION:");
 		mvprintw(6, 20, "1) IMPORTAR RECURSOS");
 		mvprintw(7, 20, "2) ABRIR EL PORTAL AL INFRAMUNDO");
@@ -25,7 +26,7 @@ void Zelda::run() {
 		mvprintw(11, 20, "ELIGA OPCION: ");
 		getstr(respuesta1);
 		cleanScreen();
-		if (respuesta1[0] == '1')
+		if (respuesta1[0] == '1')//Agregar items o armas
 		{
 			char respuesta2[1];
 			mvprintw(5, 20, "QUE TIPO DE RECURSO DESEA IMPORTAR?");
@@ -34,7 +35,7 @@ void Zelda::run() {
 			mvprintw(8, 20, "ELIGA OPCION: ");
 			getstr(respuesta2);
 			cleanScreen();
-			if (respuesta2[0] == '1') //Agregar items y armas+
+			if (respuesta2[0] == '1') //Agregar items
 			{
 				mvprintw(5, 20, "INGRESE NOMBRE DEL ITEM: ");
 				char nombreItem[50];
@@ -52,7 +53,7 @@ void Zelda::run() {
 				mvprintw(10, 20, "ELIGA OPCION: ");
 				char tipoItem[1];
 				getstr(tipoItem);
-				if (tipoItem[0] == '1')
+				if (tipoItem[0] == '1') //Agrega item curativo
 				{
 					mvprintw(11, 20, "CUANTA HP VA A CURAR ESTE ITEM? - ");
 					char curar1[10];
@@ -63,7 +64,7 @@ void Zelda::run() {
 					mvprintw(12, 20, "ITEM AGREGADO EXITOSAMENTE!");
 					getch();
 					cleanScreen();
-				} else {
+				} else { //Agrega item boosteador
 					mvprintw(11, 20, "CUANTO BOOST VA A DAR ESTE ITEM? - ");
 					char boost1[10];
 					getstr(boost1);
@@ -74,7 +75,7 @@ void Zelda::run() {
 					getch();
 					cleanScreen();
 				}
-			} else {
+			} else { //Agregar armas
 				mvprintw(5, 20, "INGRESE NOMBRE DEL ARMA: ");
 				char nombreArma[50];
 				getstr(nombreArma);
@@ -89,7 +90,7 @@ void Zelda::run() {
 				getstr(magicaC);
 				bool magica;
 				if (magicaC[0] == 'S' || magicaC[0] == 's')
-				{
+				{ //Mira si es magica o no
 					magica = true;
 				} else {
 					magica = false;
@@ -113,13 +114,13 @@ void Zelda::run() {
 				getstr(tipoArma);
 				cleanScreen();
 				if (tipoArma[0] == '1')
-				{
-					listaArmas.push_back(new ArmaAtk(nombre2, precio4, magica, cantAtk2, (cantDef2 - 20)));
+				{// Agrega arma de ataque
+					listaArmas.push_back(new ArmaAtk(nombre2, precio4, magica, cantAtk2, (cantDef2 - 150)));
 					mvprintw(14, 20, "ARMA AGREGADA EXITOSAMENTE!");
 					getch();
 					cleanScreen();
-				} else {
-					listaArmas.push_back(new ArmaDef(nombre2, precio4, magica, (cantAtk2 - 20), cantDef2));
+				} else { //Agrega arma de defensa
+					listaArmas.push_back(new ArmaDef(nombre2, precio4, magica, (cantAtk2 - 150), cantDef2));
 					mvprintw(14, 20, "ARMA AGREGADA EXITOSAMENTE!");
 					getch();
 					cleanScreen();
@@ -208,29 +209,30 @@ void Zelda::run() {
 
 
 			cleanScreen();
-		} else if (respuesta1[0] == '4')
+		} else if (respuesta1[0] == '4') //Imprimir listas
 		{
-			mvprintw(5, 20, "QUE DESEA IMPRIMIR?");
+			mvprintw(5, 20, "QUE DESEA VER?");
 			mvprintw(6, 20, "1) VER ITEMS DISPONIBLES");
 			mvprintw(7, 20, "2) VER ARMAS DISPONIBLES");
 			mvprintw(8, 20, "3) VER MOUNSTROS VIVOS");
 			mvprintw(9, 20, "4) SUMA DE ITEMS Y MOUNSTROS EXISTENTES");
-			mvprintw(10, 20, "ELIGA UNA OPCION: ");
+			mvprintw(10, 20, "5) RESTA DE ITEMS Y MOUNSTROS EXISTENTES");
+			mvprintw(11, 20, "ELIGA UNA OPCION: ");
 			char tipoImprimir[1];
 			getstr(tipoImprimir);
-			if (tipoImprimir[0] == '1')
+			if (tipoImprimir[0] == '1')//Imprime items
 			{
 				cleanScreen();
 				imprimirItems();
-			} else if (tipoImprimir[0] == '2')
+			} else if (tipoImprimir[0] == '2')//Imprime armas
 			{
 				cleanScreen();
 				imprimirArmas();
-			} else if (tipoImprimir[0] == '3')
+			} else if (tipoImprimir[0] == '3')//Imprime mounstros
 			{
 				cleanScreen();
 				imprimirMonsters();
-			} else {
+			} else if(tipoImprimir[0] == '4') { //Imprime suma de mounstros y items con sobrecarga
 				cleanScreen();
 				Sobrecarga* SB = new Sobrecarga(listaItems.size());
 				Sobrecarga* SB2 = new Sobrecarga(listaMonsters.size());
@@ -241,8 +243,19 @@ void Zelda::run() {
 				delete SB2;
 				getch();
 				cleanScreen();
+			} else {
+				cleanScreen();
+				Sobrecarga* SB = new Sobrecarga(listaItems.size());
+				Sobrecarga* SB2 = new Sobrecarga(listaMonsters.size());
+				SB2 = *SB - SB2;
+				int resta = SB2 -> getNum();
+				mvprintw(10, 20, "LA RESTA DE LOS DOS ES DE: %i", resta);
+				delete SB;
+				delete SB2;
+				getch();
+				cleanScreen();
 			}
-		} else {
+		} else { //Salir
 			seguir = false;
 		}
 	}
