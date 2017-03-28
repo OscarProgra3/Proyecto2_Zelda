@@ -23,10 +23,11 @@ class Armas {
 		int getPrecio();
 		void setMagico(bool);
 		bool getMagico();
-		virtual void setAtaque(int);
-		virtual void setDefensa(int);
-		virtual int getAtaque();
-		virtual int getDefensa();
+		virtual void setAtaque(int) = 0;
+		virtual void setDefensa(int) = 0;
+		virtual int getAtaque() = 0;
+		virtual int getDefensa() = 0;
+		virtual string getTipo() = 0;
 
 
 };

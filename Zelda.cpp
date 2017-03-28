@@ -20,8 +20,9 @@ void Zelda::run() {
 		mvprintw(6, 20, "1) IMPORTAR RECURSOS");
 		mvprintw(7, 20, "2) ABRIR EL PORTAL AL INFRAMUNDO");
 		mvprintw(8, 20, "3) EMPEZAR AVENTURA");
-		mvprintw(9, 20, "4) SALIR");
-		mvprintw(10, 20, "ELIGA OPCION: ");
+		mvprintw(9, 20, "4) VER LISTAS");
+		mvprintw(10, 20, "5) SALIR: ");
+		mvprintw(11, 20, "ELIGA OPCION: ");
 		getstr(respuesta1);
 		cleanScreen();
 		if (respuesta1[0] == '1')
@@ -105,22 +106,51 @@ void Zelda::run() {
 				int cantDef2 = atoi(cantDef1.c_str());
 
 				char tipoArma[1];
-				mvprintw(5, 20, "QUE TIPO DE ARMA DESEA IMPORTAR?");
-				mvprintw(6, 20, "1) ATAQUE");
-				mvprintw(7, 20, "2) DEFENSA");
-				mvprintw(8, 20, "ELIGA OPCION: ");
+				mvprintw(10, 20, "QUE TIPO DE ARMA DESEA IMPORTAR?");
+				mvprintw(11, 20, "1) ATAQUE");
+				mvprintw(12, 20, "2) DEFENSA");
+				mvprintw(13, 20, "ELIGA OPCION: ");
 				getstr(tipoArma);
 				cleanScreen();
 				if (tipoArma[0] == '1')
 				{
 					listaArmas.push_back(new ArmaAtk(nombre2, precio4, magica, cantAtk2, (cantDef2 - 20)));
+					mvprintw(14, 20, "ARMA AGREGADA EXITOSAMENTE!");
+					getch();
+					cleanScreen();
 				} else {
 					listaArmas.push_back(new ArmaDef(nombre2, precio4, magica, (cantAtk2 - 20), cantDef2));
+					mvprintw(14, 20, "ARMA AGREGADA EXITOSAMENTE!");
+					getch();
+					cleanScreen();
 				}
 			}
 		} else if (respuesta1[0] == '2') //Agregar Mounstros
 		{
-			
+			mvprintw(5, 20, "INGRESE HP DEL MOUNSTRO: ");
+			char HPmonster[10];
+			getstr(HPmonster);
+			string HPmonster1(HPmonster);
+			int HPmonster2 = atoi(HPmonster1.c_str());
+
+			mvprintw(6, 20, "INGRESE ATAQUE DEL MOUNSTRO: ");
+			char ATKmonster[10];
+			getstr(ATKmonster);
+			string ATKmonster1(ATKmonster);
+			int ATKmonster2 = atoi(ATKmonster1.c_str());
+
+			mvprintw(7, 20, "INGRESE LA RECOMPENSA DEL MOUNSTRO: ");
+			char DINEROmonster[10];
+			getstr(DINEROmonster);
+			string DINEROmonster1(DINEROmonster);
+			int DINEROmonster2 = atoi(DINEROmonster1.c_str());
+
+			listaMonsters.push_back(new Monster(HPmonster2, ATKmonster2, DINEROmonster2));
+
+			mvprintw(8, 20, "MOUNSTRO AGREGADO EXITOSAMENTE!");
+			getch();
+			cleanScreen();
+
 		} else if (respuesta1[0] == '3') //Empezar aventura
 		{
 
@@ -168,7 +198,7 @@ void Zelda::run() {
 			
 			
 
-			
+
 
 
 
@@ -178,6 +208,9 @@ void Zelda::run() {
 
 
 			cleanScreen();
+		} else if (respuesta1[0] == '4')
+		{
+			imprimir();
 		} else {
 			seguir = false;
 		}
@@ -202,6 +235,86 @@ void Zelda::run() {
 	//cleanScreen()
 	noecho();
 	endwin();
+}
+
+void Zelda::imprimir() {
+	string nom1;
+	int p1, c1;
+	int cont = 5;
+
+	mvprintw(cont, 20, "LOS ITEMS DISPONIBLES SON: ");
+	cont++;
+	for (int i = 0; i < listaItems.size(); ++i)
+	{
+		if (listaItems.at(i) -> getTipo() == "Curativa")
+		{
+			nom1 = listaItems.at(i) -> getNombre();
+			p1 = listaItems.at(i) -> getPrecio();
+			c1 = listaItems.at(i) -> getNum();
+			char myArray[nom1.size()+1];
+			strcpy(myArray, nom1.c_str());
+			
+			mvprintw(cont, 20, "%i", (i+1));
+			mvprintw(cont, 21, ")");
+			cont++;
+			mvprintw(cont, 20, "TIPO: CURACION");
+			cont++;
+			mvprintw(cont, 20, "NOMBRE: %s", myArray);
+			cont++;
+			mvprintw(cont, 20, "PRECIO: %i", p1);
+			cont++;
+			mvprintw(cont, 20, "CURACION: %i", c1);
+			cont++;
+		} else {
+			nom1 = listaItems.at(i) -> getNombre();
+			p1 = listaItems.at(i) -> getPrecio();
+			c1 = listaItems.at(i) -> getNum();
+			char myArray[nom1.size()+1];
+			strcpy(myArray, nom1.c_str());
+			
+			mvprintw(cont, 20, "%i", (i+1));
+			mvprintw(cont, 21, ")");
+			cont++;
+			mvprintw(cont, 20, "TIPO: BOOST");
+			cont++;
+			mvprintw(cont, 20, "NOMBRE: %s", myArray);
+			cont++;
+			mvprintw(cont, 20, "PRECIO: %i", p1);
+			cont++;
+			mvprintw(cont, 20, "AUMENTO: %i", c1);
+			cont++;
+		}
+	}
+
+	string nombre;
+	int precio;
+	bool magico;
+	int ataque;
+	int defensa;
+
+	mvprintw(cont, 20, "LAS ARMAS DISPONIBLES SON: ");
+	cont++;
+	for (int i = 0; i < listaArmas.size(); ++i)
+	{
+		if (listaArmas.at(i) -> getTipo() == "Ataque")
+		{
+			nombre = listaArmas.at(i) -> getNombre();
+			precio = listaArmas.at(i) -> getPrecio();
+			magico = listaArmas.at(i) -> getMagico();
+			ataque = listaArmas.at(i) -> getAtaque();
+			defensa = listaArmas.at(i) -> getDefensa();
+			if (magico == true)
+			{
+				
+			} else {
+
+			}
+		} else {
+
+		}
+	}
+	getch();
+	cleanScreen();
 }
 
 void Zelda::dibujologo()

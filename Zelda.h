@@ -54,6 +54,7 @@ class Zelda {
 
 	public:
 		Zelda();
+		void imprimir();
 		void run();
 		void dibujologo();
 		void boardPic();

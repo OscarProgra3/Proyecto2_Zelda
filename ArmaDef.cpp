@@ -7,6 +7,7 @@ ArmaDef::ArmaDef() {
 ArmaDef::ArmaDef(string pNombre, int pPrecio, bool pMagico, int pAtaque, int pDefensa) : Armas(pNombre, pPrecio, pMagico) {
 	ataque = pAtaque;
 	defensa = pDefensa;
+	tipo = "Defensa";
 }
 
 int ArmaDef::getAtaque() {
@@ -23,4 +24,8 @@ int ArmaDef::getDefensa() {
 
 void ArmaDef::setDefensa(int pDef) {
 	defensa = pDef;
+}
+
+string ArmaDef::getTipo() {
+	return tipo;
 }

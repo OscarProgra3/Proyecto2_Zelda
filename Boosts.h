@@ -10,12 +10,14 @@ class Boosts : public Items {
 
 	private:
 		int aumento;
+		string tipo;
 
 	public:
 		Boosts();
 		Boosts(string, int, int);
-		void setAumento(int);
-		int getAumento();
+		string getTipo();
+		void setNum(int);
+		int getNum();
 
 };
 

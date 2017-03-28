@@ -25,21 +25,6 @@ void Items::setNombre(string pnom) {
 	nombre = pnom;
 }
 
-
-int Items::getAumento() {
-	return 0;
-}
-
-void Items::setAumento(int pAumento) {
-}
-
-int Items::getCuracion() {
-	return 0;
-}
-
-void Items::setCuracion(int pCuracion) {
-}
-
 /*void Items::write(ofstream& out)
 {
    out.write(reinterpret_cast<char*>(&nombre), sizeof(nombre));

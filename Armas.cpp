@@ -35,19 +35,3 @@ bool Armas::getMagico() {
 void Armas::setMagico(bool pMagico) {
 	magico = pMagico;
 }
-
-int Armas::getAtaque() {
-	return ataque;
-}
-
-void Armas::setAtaque(int pAtk) {
-	ataque = pAtk;
-}
-
-int Armas::getDefensa() {
-	return defensa;
-}
-
-void Armas::setDefensa(int pDef) {
-	defensa = pDef;
-}
