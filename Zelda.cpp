@@ -87,7 +87,7 @@ void Zelda::run() {
 				char magicaC[1];
 				getstr(magicaC);
 				bool magica;
-				if (magicaC == 'S' || magicaC == 's')
+				if (magicaC[0] == 'S' || magicaC[0] == 's')
 				{
 					magica = true;
 				} else {
@@ -111,11 +111,11 @@ void Zelda::run() {
 				mvprintw(8, 20, "ELIGA OPCION: ");
 				getstr(tipoArma);
 				cleanScreen();
-				if (tipoArma == '1')
+				if (tipoArma[0] == '1')
 				{
-					
+					listaArmas.push_back(new ArmaAtk(nombre2, precio4, magica, cantAtk2, (cantDef2 - 20)));
 				} else {
-
+					listaArmas.push_back(new ArmaDef(nombre2, precio4, magica, (cantAtk2 - 20), cantDef2));
 				}
 			}
 		} else if (respuesta1[0] == '2') //Agregar Mounstros
