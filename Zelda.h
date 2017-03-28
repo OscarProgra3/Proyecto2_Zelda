@@ -52,9 +52,13 @@ class Zelda {
 		Mundo* mundo;
 		Tienda* tienda;
 
+
+		vector<Reino*> listareinos;
 	public:
 		Zelda();
-		void imprimir();
+		void imprimirItems();
+		void imprimirArmas();
+		void imprimirMonsters();
 		void run();
 		void dibujologo();
 		void boardPic();
@@ -62,7 +66,7 @@ class Zelda {
 		void dibujolink();
 		//string to_string();
 		void dibujoMounstro();
-		void getdibujoreinotierra(); 
+		void dibujoreinotierra(); 
 		void dibujolinkca();
 		void dibujocofrenormal();
 		void dibujoreinoagua();
