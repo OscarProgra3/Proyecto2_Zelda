@@ -214,7 +214,8 @@ void Zelda::run() {
 			mvprintw(6, 20, "1) VER ITEMS DISPONIBLES");
 			mvprintw(7, 20, "2) VER ARMAS DISPONIBLES");
 			mvprintw(8, 20, "3) VER MOUNSTROS VIVOS");
-			mvprintw(9, 20, "ELIGA UNA OPCION: ");
+			mvprintw(9, 20, "4) SUMA DE ITEMS Y MOUNSTROS EXISTENTES");
+			mvprintw(10, 20, "ELIGA UNA OPCION: ");
 			char tipoImprimir[1];
 			getstr(tipoImprimir);
 			if (tipoImprimir[0] == '1')
@@ -225,9 +226,21 @@ void Zelda::run() {
 			{
 				cleanScreen();
 				imprimirArmas();
-			} else {
+			} else if (tipoImprimir[0] == '3')
+			{
 				cleanScreen();
 				imprimirMonsters();
+			} else {
+				cleanScreen();
+				Sobrecarga* SB = new Sobrecarga(listaItems.size());
+				Sobrecarga* SB2 = new Sobrecarga(listaMonsters.size());
+				SB2 = *SB + SB2;
+				int suma = SB2 -> getNum();
+				mvprintw(10, 20, "LA SUMA DE LOS DOS ES DE: %i", suma);
+				delete SB;
+				delete SB2;
+				getch();
+				cleanScreen();
 			}
 		} else {
 			seguir = false;
@@ -247,7 +260,7 @@ void Zelda::run() {
 	getch();
 	*/
 
-	mvprintw(10, 20, "MEMORIA LIBERADA! NOS VEMOS LUEGO!");
+	mvprintw(10, 20, "NOS VEMOS LUEGO!");
 	getch();
 
 	//cleanScreen()

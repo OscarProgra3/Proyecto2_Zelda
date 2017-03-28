@@ -10,14 +10,16 @@ using namespace std;
 class Sobrecarga {
 
 	private:
-		int items;
-		int monsters;
+		int num;
 
 	public:
 		Sobrecarga();
-		Sobrecarga(int, int);
+		Sobrecarga(int);
+		int getNum();
+		void setNum(int);
+		Sobrecarga* operator+(Sobrecarga*);
 
-		friend ostream &operator<<( ostream &output, const Sobrecarga &S ) { 
+		/*friend ostream &operator<<( ostream &output, const Sobrecarga &S ) { 
 			output << " || Items : " << S.items << " Mounstros : " << S.monsters;
 			return output;            
 		}
@@ -25,7 +27,7 @@ class Sobrecarga {
 		friend istream &operator>>( istream  &input, Sobrecarga &S ) { 
 			input >> S.items >> S.monsters;
 			return input;            
-		}
+		}*/
 
 };
 
