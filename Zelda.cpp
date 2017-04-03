@@ -236,10 +236,13 @@ void Zelda::run() {
 
 				getstr(viaje);
 				
-			
+				
 				int suerte=rand()% 100 +1;
 				int tmc=0;
-				if (suerte<60)
+				if (listaMonsters.size()<2)
+				{
+					tmc=2;
+				}else if (suerte<60)
 				{
 					tmc=1;
 				}else if (suerte>=60 && suerte<90)
@@ -811,77 +814,113 @@ mvprintw(35,20,"                    /___| /___'							\n");
 
 void Zelda::dibujoMounstro() {
 	srand(time(NULL));
-	int random=rand()% 3 +1;
+	int random=rand()% 4 +1;
+
+	mvprintw(3,10,"°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
 
 	if (random==1)
 	{
-		mvprintw(5,50,"				    	(								\n");
-		mvprintw(6,50,"		                                    )								\n");
-		mvprintw(7,50,"		                                   (								\n");
-		mvprintw(8,50,"		                                    )								\n");
-		mvprintw(9,50,"		                               [^^^^^^^^^]							\n");
-		mvprintw(10,50,"		                           $$$$           $$$$						\n");
-		mvprintw(11,50,"		                        $$$                   $$$					\n");
-		mvprintw(12,50,"		                      $$                         $$					\n");
-		mvprintw(13,50,"		                     $      (00)         (00)      $				\n");
-		mvprintw(14,50,"		                    $      (0000)       (0000)      $				\n");
-		mvprintw(15,50,"		                   $      (000000)     (000000)      $				\n");
-		mvprintw(16,50,"		                   $       (0000)       (0000)       $				\n");
-		mvprintw(17,50,"		                   $        (00)         (00)        $				\n");
-		mvprintw(18,50,"		                   $                                 $				\n");
-		mvprintw(19,50,"		                    $                               $				\n");
-		mvprintw(20,50,"		                     $                             $				\n");
-		mvprintw(21,50,"		                      $$                         $$					\n");
-		mvprintw(22,50,"		                        $$$                   $$$					\n");
-		mvprintw(23,50,"		                           $$$$           $$$$						\n");
-		mvprintw(24,50,"		                               $$$$$$$$$$$							\n");
-		mvprintw(25,50,"		                               $         $							\n");
-		mvprintw(26,50,"		                           $$$$$         $$$$$						\n");
-		mvprintw(27,50,"		                          $$$$$$         $$$$$$						\n");
+		mvprintw(5,30,"		                                   (								\n");
+		mvprintw(6,30,"		                                    )								\n");
+		mvprintw(7,30,"		                                   (								\n");
+		mvprintw(8,30,"		                                    )								\n");
+		mvprintw(9,30,"		                               [^^^^^^^^^]							\n");
+		mvprintw(10,30,"		                           $$$$           $$$$						\n");
+		mvprintw(11,30,"		                        $$$                   $$$					\n");
+		mvprintw(12,30,"		                      $$                         $$					\n");
+		mvprintw(13,30,"		                     $      (00)         (00)      $				\n");
+		mvprintw(14,30,"		                    $      (0000)       (0000)      $				\n");
+		mvprintw(15,30,"		                   $      (000000)     (000000)      $				\n");
+		mvprintw(16,30,"		                   $       (0000)       (0000)       $				\n");
+		mvprintw(17,30,"		                   $        (00)         (00)        $				\n");
+		mvprintw(18,30,"		                   $                                 $				\n");
+		mvprintw(19,30,"		                    $                               $				\n");
+		mvprintw(20,30,"		                     $                             $				\n");
+		mvprintw(21,30,"		                      $$                         $$					\n");
+		mvprintw(22,30,"		                        $$$                   $$$					\n");
+		mvprintw(23,30,"		                           $$$$           $$$$						\n");
+		mvprintw(24,30,"		                               $$$$$$$$$$$							\n");
+		mvprintw(25,30,"		                               $         $							\n");
+		mvprintw(26,30,"		                           $$$$$         $$$$$						\n");
+		mvprintw(27,30,"		                          $$$$$$         $$$$$$						\n");
 	}
 	if (random==2)
 	{
-		mvprintw(10,30,"			                 .-****-.				\n");
+		mvprintw(10,30,"			                .-****-.				\n");
 		mvprintw(11,30,"	                               / _   _ \\			\n");
 		mvprintw(12,30,"	           _..._              | (') (') |			\n");
 		mvprintw(13,30,"	         .'_   _'.       _.-._| ._____, |_.-._  	\n");
 		mvprintw(14,30,"	        / (.) (.) \\     (== |-|    `-`  |-| ==)		\n");
-		mvprintw(15,30,"	   _.-._| ,_____. |_.-._ ``  \\    M    /  			\n");
-		mvprintw(16,30,"	 *(== |-\\    '-'  /-| ==)     '._____.'			\n");
-		mvprintw(17,30,"	       	 '.__M__.'              //   \\				\n");
-		mvprintw(18,30,"	        __//   \\__            _\\   //_ 			\n");
-		mvprintw(19,30,"	       (___)   (___)          (___) (___)			\n");
+		mvprintw(15,30,"	   _.-._| ,_____. |_.-._ ``   \\    M    /  			\n");
+		mvprintw(16,30,"	 *(== |-\\    '-'  /-| ==)      '._____.'			\n");
+		mvprintw(17,30,"	       	 '.__M__.'               //   \\\\				\n");
+		mvprintw(18,30,"	        __//   \\\\__            _\\\\   //_ 			\n");
+		mvprintw(19,30,"	       (___)   (___)         (___) (___)			\n");
 	}
 	if (random==3)
 	{
-		mvprintw(10,50,"		        HHH+          		\n");
-		mvprintw(11,50,"               +H+;;;H   +H+   		\n");
-		mvprintw(12,50,"              +H+;;  ;H H+;;+  		\n");
-		mvprintw(13,50,"         +HHHH+;;;;; ;HH+;  H  		\n");
-		mvprintw(14,50,"       +H++;;;;;;;;;;;;++;  ;+ 		\n");
-		mvprintw(15,50,"       H+;;;;;;;;;;;;;;;;;; +H 		\n");
-		mvprintw(16,50,"      +++;;;;;;;;;;H;;;;;;;;+H 		\n");
-		mvprintw(17,50,"      H+;;;;;;;;;;;;;;;;;;;;+H 		\n");
-		mvprintw(18,50,"   +HH+;;;;;;;;;;;;;;;;;;;;;++ 		\n");
-		mvprintw(19,50," HH;;;;;;;;;;H;;;;;;+HH;;;;+H  		\n");
-		mvprintw(20,50,"++;  ;;;;;;;;;;;;+HH;;;;;;;+H  		\n");
-		mvprintw(21,50,"H+; ;;;;;;;;;;;+H;;;;;;;;;;+H  		\n");
-		mvprintw(22,50,"H++;;;;;;;;;;H+;;;;;;;;;;;;+H  		\n");
-		mvprintw(23,50," H++;;;;;;;;H;;;;;;;;;;;;;;++  		\n");
-		mvprintw(24,50," +H+++;;;;;;;;;;;;;;;;;;;;;+;+ 		\n");
-		mvprintw(25,50,"  H++++;;;;;;;;;;;;;;;;;;;;;;H+		\n");
-		mvprintw(26,50,"   H+++;;; ;;;;;;;;;;;;;;;;;;+H 		\n");
-		mvprintw(27,50,"   +H++;;;;;  ;;;;;;;;;;;;;;;HH 		\n");
-		mvprintw(28,50,"   H++;;;;;    ;;;;;;;;;;;;;+H 		\n");
-		mvprintw(29,50,"   H+;;;;;;    ;;;;;;;;;+++HH  		\n");
-		mvprintw(30,50,"  +++;;;;;;;  ;;;;;;;;++++H    		\n");
-		mvprintw(31,50,"  H+;;;;;;;;;;;;;;;;;++HHH     		\n");
-		mvprintw(32,50,"  H++;;;;;;;;+++;;;;;+H        		\n");
-		mvprintw(33,50,"  H++;;;;;;;++++++;;;+H        		\n");
-		mvprintw(34,50,"  +++++;;;++++HHH+++HH         		\n");
-		mvprintw(35,50,"   H+++++++HH+  +HH+           		\n");
-		mvprintw(36,50,"   +H++++H+                    		\n");
-		mvprintw(37,50,"     +HH+							\n");
+		mvprintw(6,50,"		        HHH+          		\n");
+		mvprintw(7,50,"               +H+;;;H   +H+   		\n");
+		mvprintw(8,50,"              +H+;;  ;H H+;;+  		\n");
+		mvprintw(9,50,"         +HHHH+;;;;; ;HH+;  H  		\n");
+		mvprintw(10,50,"       +H++;;;;;;;;;;;;++;  ;+ 		\n");
+		mvprintw(11,50,"       H+;;;;;;;;;;;;;;;;;; +H 		\n");
+		mvprintw(12,50,"      +++;;;;;;;;;;H;;;;;;;;+H 		\n");
+		mvprintw(13,50,"      H+;;;;;;;;;;;;;;;;;;;;+H 		\n");
+		mvprintw(14,50,"   +HH+;;;;;;;;;;;;;;;;;;;;;++ 		\n");
+		mvprintw(15,50," HH;;;;;;;;;;H;;;;;;+HH;;;;+H  		\n");
+		mvprintw(16,50,"++;  ;;;;;;;;;;;;+HH;;;;;;;+H  		\n");
+		mvprintw(17,50,"H+; ;;;;;;;;;;;+H;;;;;;;;;;+H  		\n");
+		mvprintw(18,50,"H++;;;;;;;;;;H+;;;;;;;;;;;;+H  		\n");
+		mvprintw(19,50," H++;;;;;;;;H;;;;;;;;;;;;;;++  		\n");
+		mvprintw(20,50," +H+++;;;;;;;;;;;;;;;;;;;;;+;+ 		\n");
+		mvprintw(21,50,"  H++++;;;;;;;;;;;;;;;;;;;;;;H+		\n");
+		mvprintw(22,50,"   H+++;;; ;;;;;;;;;;;;;;;;;;+H 		\n");
+		mvprintw(23,50,"   +H++;;;;;  ;;;;;;;;;;;;;;;HH 		\n");
+		mvprintw(24,50,"   H++;;;;;    ;;;;;;;;;;;;;+H 		\n");
+		mvprintw(25,50,"   H+;;;;;;    ;;;;;;;;;+++HH  		\n");
+		mvprintw(26,50,"  +++;;;;;;;  ;;;;;;;;++++H    		\n");
+		mvprintw(27,50,"  H+;;;;;;;;;;;;;;;;;++HHH     		\n");
+		mvprintw(28,50,"  H++;;;;;;;;+++;;;;;+H        		\n");
+		mvprintw(29,50,"  H++;;;;;;;++++++;;;+H        		\n");
+		mvprintw(30,50,"  +++++;;;++++HHH+++HH         		\n");
+		mvprintw(31,50,"   H+++++++HH+  +HH+           		\n");
+		mvprintw(32,50,"   +H++++H+                    		\n");
+		mvprintw(33,50,"     +HH+							\n");
+	}
+	if (random==4)
+	{
+	mvprintw(8,30,"				           _,-------.			\n");
+	mvprintw(9,30,"                                ,'          `.		\n");
+	mvprintw(10,30,"                               ;              ;		\n");
+	mvprintw(11,30,"                      ,-'""-. ;,-""-._        ;		\n");
+	mvprintw(12,30,"                     ;  ,-. ,'_      `.       ;		\n");
+	mvprintw(13,30,"                     ;  ;_;;;' ;      ;      ;		\n");
+	mvprintw(14,30,"                     `.    ;`-'       ;      ;		\n");
+	mvprintw(15,30,"                       `-,''.        ,'     ;		\n");
+	mvprintw(16,30,"                     _,-'    `-.__,-'      ;		\n");
+	mvprintw(17,30,"              _,,-****                    ;			\n");
+	mvprintw(18,30,"              `.                         ;			\n");
+	mvprintw(19,30,"               ;`.                      ;			\n");
+	mvprintw(20,30,"               ;  `.                   ;			\n");
+	mvprintw(21,30,"               ;.   `.       ;        ;				\n");
+	mvprintw(22,30,"                ;     `.     ;       ;				\n");
+	mvprintw(23,30,"                ;       `-.. ;      ;				\n");
+	mvprintw(24,30,"                ;           ,'     ;				\n");
+	mvprintw(25,30,"                ;                  ;				\n");
+	mvprintw(26,30,"                 ;                ;					\n");
+	mvprintw(27,30,"                 ;                ;					\n");
+	mvprintw(28,30,"                 ;               ;					\n");
+	mvprintw(29,30,"                  ; --.          ;					\n");
+	mvprintw(30,30,"                  ; .___         ;					\n");
+	mvprintw(31,30,"                   ;    '--..   ;					\n");
+	mvprintw(32,30,"                   ; '--..      ;					\n");
+	mvprintw(33,30,"                    ;_    '**   ;					\n");
+	mvprintw(34,30,"                     ;****'-._  ;					\n");
+	mvprintw(35,30,"                     ;-.._      ;					\n");
+	mvprintw(36,30,"                     ;_   ''    ;					\n");
+	mvprintw(37,30,"                     ; **- .    ;					\n");
+
 	}
 	
 }
@@ -936,7 +975,7 @@ void Zelda::dibujocofrenormal()
 
 void Zelda::dibujocofreepico()
 {
-	mvprintw(18,40,"	         ____...------------...____ 				\n");
+	mvprintw(18,40,"	           ____...------------...____ 				\n");
 	mvprintw(19,40,"               _.-""`- /o/__ ____ __ __  __ \\o\\_`""-._ 	\n");
 	mvprintw(20,40,"             .'     / /                    \\ \\     '.	\n");
 	mvprintw(21,40,"             |=====/o/======================\\o\\=====|	\n");
@@ -1010,7 +1049,7 @@ void Zelda::dibujoreinonutral()
 
 void Zelda::dibujoneutral2()
 {
-mvprintw(20,1,"	           ,-_                  (`  ).				");
+mvprintw(20,1,"	               ,-_                  (`  ).	");
 mvprintw(21,1,"                      |-_'-,              (     ).	");
 mvprintw(22,1,"                      |-_'-'           _(        '`.	");
 mvprintw(23,1,"             _        |-_'/        .=(`(      .     )");
@@ -1046,3 +1085,4 @@ void Zelda::dibujoreinofuego()
 	mvprintw(23,40,"                                ___..         _.--''        .'  			");
 	mvprintw(24,40,"                          --''''             '            .'				");
 }
+
